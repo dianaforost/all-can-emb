@@ -1,4 +1,35 @@
-.header {
-  display: flex;
-  color: blue;
+header {
+  background-color: pink;
 }
+
+// .header__page-list {
+//   display: flex;
+// }
+// .header {
+//   &__page-list {
+//     display: flex;
+//   }
+// }
+// .header__content {
+//   padding: 16px 0;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+
+//   @media screen and (max-width: $desktop) {
+//     padding: 8px 0px;
+//   }
+//   @media screen and (max-width: $tablet) {
+//     padding: 4px 0px;
+//   }
+//   .menu__container {
+//     @media screen and (max-width: $desktop) {
+//       width: 41%;
+//       margin-right: 7px;
+//     }
+//     @media screen and (max-width: $tablet) {
+//       width: 53%;
+//       margin-right: 7px;
+//     }
+//   }
+// }

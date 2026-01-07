@@ -1,3 +1,53 @@
+@import "../styles/variables.scss";
 .global {
-    color: green;
+  color: green;
+}
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  margin-bottom: 120px;
+  @media screen and (max-width: $desktop) {
+    margin-bottom: 100px;
+  }
+  @media screen and (max-width: $tablet2) {
+    margin-bottom: 60px;
+  }
+}
+
+.container {
+  max-width: 1792px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @media screen and (max-width: $desktop) {
+    max-width: 1352px;
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    max-width: none;
+  }
+}
+
+.inner-container {
+  max-width: 1464px;
+  margin: 0 auto;
+  width: 84%;
+
+  @media screen and (max-width: $desktop) {
+    max-width: 1096px;
+  }
+
+  @media screen and (max-width: $tablet2) {
+    width: 100%;
+  }
 }
