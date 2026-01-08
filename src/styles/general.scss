@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-style: normal;
+  font-family: "Raleway", sans-serif;
 }
 
 img {
@@ -33,9 +34,36 @@ li {
 
 a {
   text-decoration: none;
+  color: #070707;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    color: #070707;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
 }
 button {
   cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    color: #070707;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
 }
 
 .section-image {
@@ -71,19 +99,6 @@ button {
   line-height: 20px;
   color: #fff;
   border-radius: 5px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  &:hover,
-  &:focus {
-    background-color: #fff;
-    color: #070707;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-  }
 }
 .content {
   display: flex;
