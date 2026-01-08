@@ -1,31 +1,69 @@
-.header__page-list {
-  display: flex;
+// @use "./variables.scss";
+header {
+  padding: 20px 40px;
+  max-width: 1760px;
+  // @media screen and (max-width: $desktop) {
+  //   max-width: 1320px;
+  //   padding: 20px 40px 8px;
+  // }
+  // @media screen and (max-width: $desktop1) {
+  //   border-radius: 0px 0px $small-border-radius $small-border-radius;
+  //   padding: 12px 20px;
+  // }
+  // @media screen and (max-width: 768px) {
+  //   max-width: 688px;
+  // }
+  // @media screen and (max-width: $mobile) {
+  //   padding: 8px 16px;
+  // }
 }
 .header {
-  &__page-list {
+  &__content {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      a {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 700;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    gap: 26px;
+    .page_item {
+      &.current_page_item a {
+        color: #070707;
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+    a {
+      position: relative;
+      padding: 4px 8px;
+      &::after {
+        opacity: 0;
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #070707;
+        transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 1s;
+      }
+      color: #4a5565;
+      font-size: 18px;
+      line-height: 24px;
+      &:hover {
+        color: #070707;
+      }
+    }
   }
 }
-// .header__content {
-//   padding: 16px 0;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-
-//   @media screen and (max-width: $desktop) {
-//     padding: 8px 0px;
-//   }
-//   @media screen and (max-width: $tablet) {
-//     padding: 4px 0px;
-//   }
-//   .menu__container {
-//     @media screen and (max-width: $desktop) {
-//       width: 41%;
-//       margin-right: 7px;
-//     }
-//     @media screen and (max-width: $tablet) {
-//       width: 53%;
-//       margin-right: 7px;
-//     }
-//   }
-// }

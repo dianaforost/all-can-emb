@@ -11,15 +11,30 @@
      <header class="header">
         <div class="container">
             <div class="header__content">
-               <div><a href="http://all-can-emb/">All Canadian Emblem Corporation</a></div>
-               <div>
-                <ul class="header__page-list">
-                <li><a href="">Home</a></li>
-                <li><a href="">What We Do</a></li>
-                <li><a href="">About us</a></li>
-                <li><a href="">Contact</a></li>
-               </ul>
+               <div class="header__content__logo">
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                 <?php
+          if ( has_custom_logo() ) {
+            the_custom_logo();
+          } else {
+            ?>
+            <img 
+              src="<?php echo esc_url( get_stylesheet_directory_uri() . '/src/images/leaficon.png' ); ?>" 
+              alt="<?php bloginfo( 'name' ); ?>"
+            >
+            <?php
+          }
+          ?>
+</a>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">All Canadian Emblem</a>
             </div>
+            <?php
+wp_nav_menu([
+  'theme_location' => 'header',
+  'container'      => false,
+  'menu_class'     => 'header__page-list',
+]);
+?>
             </div>
         </div>
     </header>
