@@ -1,3 +1,49 @@
-.home {
-    color: pink;
+.section-image {
+  padding: 100px 100px 100px 100px;
+  position: absolute;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  background-image: url("../../images/allcanemb1.png");
+  height: inherit;
+  overflow: hidden;
+  z-index: -1;
+}
+.main-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.main-text {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.main-button {
+  border: none;
+  padding: 18px 35px;
+  background-color: #070707;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  border-radius: 5px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 230px 191px;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+  }
 }
