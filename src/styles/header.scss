@@ -39,9 +39,25 @@ header {
     .page_item {
       &.current_page_item a {
         color: #070707;
+        &::after {
+          opacity: 1;
+        }
       }
     }
     a {
+      position: relative;
+      padding: 4px 8px;
+      &::after {
+        opacity: 0;
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #070707;
+        transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 1s;
+      }
       color: #4a5565;
       font-size: 18px;
       line-height: 24px;
@@ -50,33 +66,4 @@ header {
       }
     }
   }
-  @media screen and (max-width: 992px) {
-    &__page-list li:not(:last-child) {
-      margin-right: 0px;
-    }
-  }
 }
-
-// .header__content {
-//   padding: 16px 0;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-
-//   @media screen and (max-width: $desktop) {
-//     padding: 8px 0px;
-//   }
-//   @media screen and (max-width: $tablet) {
-//     padding: 4px 0px;
-//   }
-//   .menu__container {
-//     @media screen and (max-width: $desktop) {
-//       width: 41%;
-//       margin-right: 7px;
-//     }
-//     @media screen and (max-width: $tablet) {
-//       width: 53%;
-//       margin-right: 7px;
-//     }
-//   }
-// }
