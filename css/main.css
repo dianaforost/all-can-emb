@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-style: normal;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.global {
+  color: green;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  margin-bottom: 120px;
+}
+@media screen and (max-width: 992px) {
+  .section {
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .section {
+    margin-bottom: 60px;
+  }
+}
+
+.container {
+  max-width: 1792px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 1352px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container {
+    max-width: none;
+  }
+}
+
+.inner-container {
+  max-width: 1464px;
+  margin: 0 auto;
+  width: 84%;
+}
+@media screen and (max-width: 992px) {
+  .inner-container {
+    max-width: 1096px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .inner-container {
+    width: 100%;
+  }
+}
+
+.header__page-list {
+  display: flex;
+}
+
+.header__page-list {
+  display: flex;
+}
+
+.footer {
+  background-color: aqua;
+}
+
+/*# sourceMappingURL=main.css.map */
