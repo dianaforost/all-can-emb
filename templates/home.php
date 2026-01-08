@@ -89,12 +89,11 @@ if ( $categories ) :
         <?php while ( have_rows( 'why_us' ) ) : the_row(); ?>
 
             <li class="why-us__list__item">
-              <?php $icon_url = get_sub_field('why_us_icon'); // returns URL
-if ( $icon_url ) : 
-?>
+              <?php $icon_url = get_sub_field('why_us_icon');
+                  if ( $icon_url ) : 
+                ?>
     <img class="why-us__list__item__icon" src="<?php echo esc_url( $icon_url ); ?>" alt="">
 <?php endif; ?>
-
               <div class="why-us__list__item__wrap">
                   <?php if ( get_sub_field( 'why_us_title' ) ) : ?>
                     <h3><?php the_sub_field( 'why_us_title' ); ?></h3>
@@ -104,12 +103,8 @@ if ( $icon_url ) :
                     <p><?php the_sub_field( 'why_us_text' ); ?></p>
                 <?php endif; ?>
               </div>
-
-
             </li>
-
         <?php endwhile; ?>
-
     </ul>
 <?php endif; ?>
     </div>
