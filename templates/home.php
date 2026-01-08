@@ -110,6 +110,47 @@ if ( $categories ) :
     </div>
   </div>
 </section>
+
+<section class="section info">
+  <div class="container">
+    <div class="inner-container info__wrap">
+
+
+      <div>
+       <?php 
+$info_title = get_field('info_title');
+$info_text = get_field('info_text');
+$info_button_text = get_field('info_button_text');
+
+if ( $info_title ) : 
+?>
+    <h3 class="info__title"><?php echo esc_html( $info_title ); ?></h3>
+<?php endif; ?>
+
+<?php if ( $info_text ) : ?>
+    <p class="info__text"><?php echo esc_html( $info_text ); ?></p>
+<?php endif; ?>
+
+<?php if ( $info_button_text ) : ?>
+    <a class="info__button"><?php echo esc_html( $info_button_text ); ?></a>
+<?php endif; ?>
+      </div>
+
+
+
+      <div>
+      <?php $icon_url = get_field('info_image');
+                  if ( $icon_url ) : 
+                ?>
+    <img class="info__image" src="<?php echo esc_url( $icon_url ); ?>" alt="">
+<?php endif; ?>
+      </div>
+
+
+      
+    </div>
+  </div>
+</section>
     </main>
 
 
