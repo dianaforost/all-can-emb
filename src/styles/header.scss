@@ -1,15 +1,11 @@
-header {
-  background-color: pink;
+.header__page-list {
+  display: flex;
 }
-
-// .header__page-list {
-//   display: flex;
-// }
-// .header {
-//   &__page-list {
-//     display: flex;
-//   }
-// }
+.header {
+  &__page-list {
+    display: flex;
+  }
+}
 // .header__content {
 //   padding: 16px 0;
 //   display: flex;
