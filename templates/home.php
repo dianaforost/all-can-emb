@@ -7,7 +7,7 @@ get_header();
     <main>
 <section class="section main-section" style ="height: 600px;">
 <?php 
-$main_picture = get_field('main_picture'); // returns array
+$main_picture = get_field('main_picture');
 if ( $main_picture ) :
 ?>
 <div class="section-image" style="background-image: url('<?php echo esc_url( $main_picture['url'] ); ?>');">
@@ -54,14 +54,14 @@ if ( $main_picture ) :
 <?php 
 $categories = get_categories([
     'hide_empty' => false,
-    'exclude'    => [1] // Optional: exclude Uncategorized (ID 1)
+    'exclude'    => [1]
 ]);
 
 if ( $categories ) :
 ?>
 <ul class="depart__list">
-    <?php foreach ( $categories as $category ) : 
-        $link = get_category_link( $category->term_id ); // get category URL
+    <?php foreach ( $categories as $category ) :  
+        $link = get_category_link( $category->term_id );
     ?>
         <li class="depart__list__item">
             <a href="<?php echo esc_url( $link ); ?>">
