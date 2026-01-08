@@ -40,6 +40,11 @@ function wp_it_volunteers_scripts() {
     wp_enqueue_script( 'contacts-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/contacts.js', array(), false, true );
   }
 
+   if ( is_page_template('templates/what-we-do.php') ) {
+    wp_enqueue_style( 'what-we-do-style', get_template_directory_uri() . '/assets/styles/template-styles/what-we-do.css', array('main') );
+    wp_enqueue_script( 'what-we-do-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/what-we-do.js', array(), false, true );
+  }
+
  
 }
 /** add fonts */
@@ -50,16 +55,16 @@ function add_google_fonts() {
 add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 
 /** Register menus */
-function wp_it_volunteers_menus() {
+function wp_menus() {
   $locations = array(
-    'header' => __( 'Header Menu', 'wp-it-volunteers' ),
-    'footer' => __( 'Footer Menu', 'wp-it-volunteers' ),
+    'header' => __( 'Header Menu', 'wp' ),
+    'footer' => __( 'Footer Menu', 'wp' ),
   );
 
   register_nav_menus( $locations );
 }
 
-add_action( 'init', 'wp_it_volunteers_menus');
+add_action( 'init', 'wp_menus');
 
 
 /** ACF add options page */

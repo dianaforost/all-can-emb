@@ -15,16 +15,15 @@
               <a href="<?php echo home_url('/'); ?>">
   <img src="<?php echo get_stylesheet_directory_uri(); ?>/src/images/leaficon.png" alt="Leaf icon">
 </a>
-                <a href="http://all-can-emb/">All Canadian Emblem</a>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">All Canadian Emblem</a>
             </div>
-               <div>
-                <ul class="header__page-list">
-                <li><a href="">Home</a></li>
-                <li><a href="">What We Do</a></li>
-                <li><a href="">About us</a></li>
-                <li><a href="">Contact</a></li>
-               </ul>
-            </div>
+            <?php
+wp_nav_menu([
+  'theme_location' => 'header',
+  'container'      => false,
+  'menu_class'     => 'header__page-list',
+]);
+?>
             </div>
         </div>
     </header>

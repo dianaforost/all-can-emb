@@ -33,13 +33,18 @@ header {
       }
     }
   }
-  &__page-list {
+  ul {
     display: flex;
-    li:not(:last-child) {
-      margin-right: 26px;
+    gap: 26px;
+    .page_item {
+      &.current_page_item a {
+        color: #070707;
+      }
     }
     a {
       color: #4a5565;
+      font-size: 18px;
+      line-height: 24px;
       &:hover {
         color: #070707;
       }
