@@ -71,15 +71,51 @@ if ( $categories ) :
     <?php endforeach; ?>
 </ul>
 <?php endif; ?>
-
-
-        
-
       </div>
     </div>
 </section>
-    </main>
+<section class="section">
+  <div class="container">
+    <div class="inner-container why-us">
+       <?php if ( get_field( 'why_us_section_title' ) ) : ?>
+            <h2 class="why_us_title">
+                <?php the_field( 'why_us_section_title' ); ?>
+            </h2>
+        <?php endif; ?>
 
+        <?php if ( have_rows( 'why_us' ) ) : ?>
+    <ul class="why-us__list">
+
+        <?php while ( have_rows( 'why_us' ) ) : the_row(); ?>
+
+            <li class="why-us__list__item">
+              <?php $icon_url = get_sub_field('why_us_icon'); // returns URL
+if ( $icon_url ) : 
+?>
+    <img class="why-us__list__item__icon" src="<?php echo esc_url( $icon_url ); ?>" alt="">
+<?php endif; ?>
+
+              <div class="why-us__list__item__wrap">
+                  <?php if ( get_sub_field( 'why_us_title' ) ) : ?>
+                    <h3><?php the_sub_field( 'why_us_title' ); ?></h3>
+                <?php endif; ?>
+
+                <?php if ( get_sub_field( 'why_us_text' ) ) : ?>
+                    <p><?php the_sub_field( 'why_us_text' ); ?></p>
+                <?php endif; ?>
+              </div>
+
+
+            </li>
+
+        <?php endwhile; ?>
+
+    </ul>
+<?php endif; ?>
+    </div>
+  </div>
+</section>
+    </main>
 
 
 <?php get_footer(); ?>
