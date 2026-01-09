@@ -29,11 +29,20 @@ if ( $main_picture ) :
               </li>
             <li>
 
-            <?php  if (get_field( 'main_button_text' )) {?>
-                    <button class="main-button">
-                        <?php the_field("main_button_text")?>
-            </button>
-                    <?php } ?>
+           
+            <?php
+$button_text = get_field( 'main_button_text' );
+$button_link = get_field( 'main_button_link' );
+
+if ( $button_text && $button_link ) :
+?>
+    <a class="main-button"
+       href="<?php echo esc_url( $button_link['url'] ); ?>"
+       target="<?php echo esc_attr( $button_link['target'] ?: '_self' ); ?>">
+        <?php echo esc_html( $button_text ); ?>
+</a>
+<?php endif; ?>
+
               </li>
          </ul>
        </div>
