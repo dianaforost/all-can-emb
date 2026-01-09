@@ -26,7 +26,9 @@
           }
           ?>
 </a>
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">All Canadian Emblem</a>
+               <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+    <?php bloginfo( 'name' ); ?>
+</a>
             </div>
             <?php
 wp_nav_menu([
