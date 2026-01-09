@@ -124,12 +124,12 @@ if ( $categories ) :
   <div class="container">
     <div class="inner-container info__wrap">
 
-
       <div class="info__text-wrap">
        <?php 
 $info_title = get_field('info_title');
 $info_text = get_field('info_text');
 $info_button_text = get_field('info_button_text');
+$info_button_link  = get_field( 'info_button_link' );
 
 if ( $info_title ) : 
 ?>
@@ -140,8 +140,12 @@ if ( $info_title ) :
     <p class="info__text-wrap__text"><?php echo esc_html( $info_text ); ?></p>
 <?php endif; ?>
 
-<?php if ( $info_button_text ) : ?>
-    <a class="info__text-wrap__button"><?php echo esc_html( $info_button_text ); ?>   </a>
+<?php if ( $info_button_text && $info_button_link ) : ?>
+    <a class="info__text-wrap__button"
+       href="<?php echo esc_url( $info_button_link['url'] ); ?>"
+       target="<?php echo esc_attr( $info_button_link['target'] ?: '_self' ); ?>">
+        <?php echo esc_html( $info_button_text ); ?>
+    </a>
 <?php endif; ?>
       </div>
 
