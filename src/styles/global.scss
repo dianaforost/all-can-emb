@@ -43,11 +43,11 @@
   margin: 0 auto;
   width: 84%;
 
-  @media screen and (max-width: $desktop) {
+  @media screen and (max-width: 992px) {
     max-width: 1096px;
   }
 
-  @media screen and (max-width: $tablet2) {
+  @media screen and (max-width: 576px) {
     width: 100%;
   }
 }

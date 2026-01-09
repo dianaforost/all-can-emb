@@ -1,3 +1,39 @@
 .footer {
-  background-color: aqua;
+  &__logo {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  &__content {
+    padding: 102px 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    &__title {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .menu-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        a {
+          &:hover {
+            color: #364153;
+          }
+        }
+      }
+    }
+  }
+  &__rights {
+    border-top: 0.5px #000 solid;
+    text-align: center;
+    padding: 28px 0px;
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
