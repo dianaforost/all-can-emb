@@ -63,7 +63,8 @@ if ( $button_text && $button_link ) :
 <?php 
 $categories = get_categories([
     'hide_empty' => false,
-    'exclude'    => [1]
+    'exclude'    => [1],
+    'number'     => 3,
 ]);
 
 if ( $categories ) :
@@ -72,13 +73,24 @@ if ( $categories ) :
     <?php foreach ( $categories as $category ) :  
         $link = get_category_link( $category->term_id );
     ?>
-        <li class="depart__list__item">
-            <a href="<?php echo esc_url( $link ); ?>">
+        <li>
+            <a class="depart__list__item" href="<?php echo esc_url( $link ); ?>">
                 <?php echo esc_html( $category->name ); ?>
             </a>
         </li>
     <?php endforeach; ?>
 </ul>
+<?php endif; ?>
+<?php 
+$departments_button_text = get_field('departments_button_text');
+$departments_button  = get_field( 'departments_button' );
+?>
+<?php if ( $departments_button_text && $departments_button ) : ?>
+    <a class="depart__content__link"
+       href="<?php echo esc_url( $departments_button['url'] ); ?>"
+       target="<?php echo esc_attr( $departments_button['target'] ?: '_self' ); ?>">
+        <?php echo esc_html( $departments_button_text ); ?>
+    </a>
 <?php endif; ?>
       </div>
     </div>
