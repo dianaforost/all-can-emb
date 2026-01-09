@@ -14,8 +14,8 @@ $about_text = get_field( 'about_text' );
 
 if ( $about_title && $about_text ) :
 ?>
-<h1><?php echo esc_html( $about_title ); ?></h1>
-    <p><?php echo esc_html( $about_text ); ?></p>
+<h1 class="about__title"><?php echo esc_html( $about_title ); ?></h1>
+    <p class="about__text"><?php echo esc_html( $about_text ); ?></p>
 <?php endif; ?>
       </div>
     </div>

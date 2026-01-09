@@ -4,4 +4,12 @@
   gap: 24px;
   align-items: center;
   text-align: center;
+  &__title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  &__text {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
