@@ -24,15 +24,15 @@ if ( $about_title && $about_text ) :
 
    <section class="section">
     <div class="container">
-      <div class="inner-container">
+      <div class="inner-container our-story">
 <?php
 $story_title= get_field('our_story_title');
 $story_text = get_field( 'our_story_text' );
 
 if ( $story_title && $story_text ) :
 ?>
-<h3><?php echo esc_html( $story_title ); ?></h3>
-    <p><?php echo esc_html( $story_text ); ?></p>
+<h3 class="our-story__title"><?php echo esc_html( $story_title ); ?></h3>
+    <p class="our-story__text"><?php echo esc_html( $story_text ); ?></p>
 <?php endif; ?>
       </div>
     </div>
