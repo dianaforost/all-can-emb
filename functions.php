@@ -60,6 +60,11 @@ if ( ! function_exists( 'ace_enqueue_assets' ) ) {
             wp_enqueue_script( 'ace-what-we-do-script', get_template_directory_uri() . '/assets/scripts/template-scripts/what-we-do.js', [], null, true );
         }
 
+        if (is_singular() && locate_template('template-parts/work-with-us.php')) {
+    wp_enqueue_style('work-with-us-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/work-with-us.css', array('main'));
+    wp_enqueue_script('work-with-us-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/work-with-us.js', array(), false, true);
+  }
+
     }
 
     add_action( 'wp_enqueue_scripts', 'ace_enqueue_assets' );

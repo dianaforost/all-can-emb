@@ -29,14 +29,15 @@
 .main-button {
   border: none;
   padding: 18px 35px;
-  background-color: #070707;
+  background-color: #262626;
   font-size: 16px;
   line-height: 20px;
   color: #fff;
+  border: 0.5px #262626 solid;
   border-radius: 5px;
   &:hover {
     background-color: #fff;
-    color: #070707;
+    color: #262626;
   }
 }
 .content {
@@ -63,21 +64,22 @@
     padding: 60px 0px;
     align-items: center;
     a {
-      position: relative;
       &:hover {
         color: #364153;
       }
     }
-    &__link::after {
-      opacity: 1;
-      position: absolute;
-      content: "";
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background-color: #070707;
-      transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 1s;
+    &__link {
+      position: relative;
+      &::after {
+        opacity: 1;
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #262626;
+      }
     }
   }
   &__title {
@@ -163,10 +165,21 @@
       line-height: 24px;
     }
     &__button {
+      position: relative;
       width: max-content;
       font-size: 16px;
       line-height: 20px;
       font-weight: 500;
+      &::after {
+        opacity: 1;
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #262626;
+      }
       &:hover {
         color: #364153;
       }
