@@ -107,3 +107,35 @@
     }
   }
 }
+
+.info {
+  background-color: #f9fafb;
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    align-items: center;
+    padding: 68px 0px;
+  }
+  &__text-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    &__title {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    &__text {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    &__button {
+      width: max-content;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+  }
+}

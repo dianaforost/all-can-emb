@@ -71,7 +71,9 @@ if ( ! function_exists( 'ace_add_google_fonts' ) ) {
     function ace_add_google_fonts() {
         wp_enqueue_style(
             'ace-google-fonts',
-            'https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap'
+            'https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Open+Sans&family=Roboto&display=swap',
+            [],
+            null
         );
     }
 
