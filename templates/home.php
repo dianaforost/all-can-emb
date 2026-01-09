@@ -29,11 +29,20 @@ if ( $main_picture ) :
               </li>
             <li>
 
-            <?php  if (get_field( 'main_button_text' )) {?>
-                    <button class="main-button">
-                        <?php the_field("main_button_text")?>
-            </button>
-                    <?php } ?>
+           
+            <?php
+$button_text = get_field( 'main_button_text' );
+$button_link = get_field( 'main_button_link' );
+
+if ( $button_text && $button_link ) :
+?>
+    <a class="main-button"
+       href="<?php echo esc_url( $button_link['url'] ); ?>"
+       target="<?php echo esc_attr( $button_link['target'] ?: '_self' ); ?>">
+        <?php echo esc_html( $button_text ); ?>
+</a>
+<?php endif; ?>
+
               </li>
          </ul>
        </div>
@@ -54,7 +63,8 @@ if ( $main_picture ) :
 <?php 
 $categories = get_categories([
     'hide_empty' => false,
-    'exclude'    => [1]
+    'exclude'    => [1],
+    'number'     => 3,
 ]);
 
 if ( $categories ) :
@@ -63,13 +73,24 @@ if ( $categories ) :
     <?php foreach ( $categories as $category ) :  
         $link = get_category_link( $category->term_id );
     ?>
-        <li class="depart__list__item">
-            <a href="<?php echo esc_url( $link ); ?>">
+        <li>
+            <a class="depart__list__item" href="<?php echo esc_url( $link ); ?>">
                 <?php echo esc_html( $category->name ); ?>
             </a>
         </li>
     <?php endforeach; ?>
 </ul>
+<?php endif; ?>
+<?php 
+$departments_button_text = get_field('departments_button_text');
+$departments_button  = get_field( 'departments_button' );
+?>
+<?php if ( $departments_button_text && $departments_button ) : ?>
+    <a class="depart__content__link"
+       href="<?php echo esc_url( $departments_button['url'] ); ?>"
+       target="<?php echo esc_attr( $departments_button['target'] ?: '_self' ); ?>">
+        <?php echo esc_html( $departments_button_text ); ?>
+    </a>
 <?php endif; ?>
       </div>
     </div>
@@ -115,12 +136,12 @@ if ( $categories ) :
   <div class="container">
     <div class="inner-container info__wrap">
 
-
       <div class="info__text-wrap">
        <?php 
 $info_title = get_field('info_title');
 $info_text = get_field('info_text');
 $info_button_text = get_field('info_button_text');
+$info_button_link  = get_field( 'info_button_link' );
 
 if ( $info_title ) : 
 ?>
@@ -131,8 +152,12 @@ if ( $info_title ) :
     <p class="info__text-wrap__text"><?php echo esc_html( $info_text ); ?></p>
 <?php endif; ?>
 
-<?php if ( $info_button_text ) : ?>
-    <a class="info__text-wrap__button"><?php echo esc_html( $info_button_text ); ?>   </a>
+<?php if ( $info_button_text && $info_button_link ) : ?>
+    <a class="info__text-wrap__button"
+       href="<?php echo esc_url( $info_button_link['url'] ); ?>"
+       target="<?php echo esc_attr( $info_button_link['target'] ?: '_self' ); ?>">
+        <?php echo esc_html( $info_button_text ); ?>
+    </a>
 <?php endif; ?>
       </div>
 
