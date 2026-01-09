@@ -64,20 +64,22 @@
     padding: 60px 0px;
     align-items: center;
     a {
-      position: relative;
       &:hover {
         color: #364153;
       }
     }
-    &__link::after {
-      opacity: 1;
-      position: absolute;
-      content: "";
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background-color: #262626;
+    &__link {
+      position: relative;
+      &::after {
+        opacity: 1;
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #262626;
+      }
     }
   }
   &__title {
