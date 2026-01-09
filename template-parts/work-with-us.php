@@ -1,4 +1,4 @@
-<section class="join-us">
+<section class="section join-us">
   <div class="container">
     <div class="inner-container work-with-us__container">
        <?php if ( get_field( 'work_with_us_title' ) ) : ?>
