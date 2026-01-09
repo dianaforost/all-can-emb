@@ -116,7 +116,7 @@ if ( $categories ) :
     <div class="inner-container info__wrap">
 
 
-      <div>
+      <div class="info__text-wrap">
        <?php 
 $info_title = get_field('info_title');
 $info_text = get_field('info_text');
@@ -124,15 +124,15 @@ $info_button_text = get_field('info_button_text');
 
 if ( $info_title ) : 
 ?>
-    <h3 class="info__title"><?php echo esc_html( $info_title ); ?></h3>
+    <h3 class="info__text-wrap__title"><?php echo esc_html( $info_title ); ?></h3>
 <?php endif; ?>
 
 <?php if ( $info_text ) : ?>
-    <p class="info__text"><?php echo esc_html( $info_text ); ?></p>
+    <p class="info__text-wrap__text"><?php echo esc_html( $info_text ); ?></p>
 <?php endif; ?>
 
 <?php if ( $info_button_text ) : ?>
-    <a class="info__button"><?php echo esc_html( $info_button_text ); ?></a>
+    <a class="info__text-wrap__button"><?php echo esc_html( $info_button_text ); ?>   </a>
 <?php endif; ?>
       </div>
 
@@ -147,7 +147,7 @@ if ( $info_title ) :
       </div>
 
 
-      
+
     </div>
   </div>
 </section>
