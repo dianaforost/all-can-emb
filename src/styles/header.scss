@@ -1,8 +1,8 @@
 @use "./variables";
-.custom-logo {
-  width: 70px;
-}
 .header {
+  .custom-logo {
+    width: 70px;
+  }
   position: fixed;
   background-color: variables.$main-white-color;
   width: 100%;

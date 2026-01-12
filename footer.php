@@ -5,9 +5,17 @@
 
 
         <div class="footer__content__wrap">
-            <a class="footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-    <?php bloginfo( 'name' ); ?>
-</a>
+              <?php
+          if ( has_custom_logo() ) {
+            the_custom_logo();
+          } else {
+            ?>
+        <a class="footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <?php bloginfo( 'name' ); ?>
+        </a>
+            <?php
+          }
+          ?>
 <?php if ( get_field( 'footer_company_description', 'option' ) ) : ?>
     <p class="footer-text">
         <?php echo esc_html( get_field( 'footer_company_description', 'option' ) ); ?>
