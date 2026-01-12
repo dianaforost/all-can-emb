@@ -11,13 +11,13 @@
      <header class="header">
         <div class="container">
             <div class="header__content">
-               <div class="header__content__logo">
+               <div class="header__content__wrap">
                  <?php
           if ( has_custom_logo() ) {
             the_custom_logo();
           } else {
             ?>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+        <a class="header__content_logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
             <?php bloginfo( 'name' ); ?>
         </a>
             <?php
@@ -28,7 +28,7 @@
 wp_nav_menu([
   'theme_location' => 'header',
   'container'      => false,
-  'menu_class'     => 'header__page-list',
+  'menu_class'     => 'header__content__list',
 ]);
 ?>
             </div>

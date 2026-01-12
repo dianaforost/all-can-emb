@@ -1,12 +1,29 @@
+@use "./variables";
 .footer {
-  background-color: #262626;
-  color: #fff;
+  background-color: variables.$main-black-color;
+  color: variables.$main-white-color;
+  .custom-logo-link {
+    width: 100px;
+    transform: none;
+    .custom-logo {
+      border-radius: 6px;
+    }
+  }
   a {
-    color: #fff;
+    color: variables.$main-white-color;
+  }
+  .menu-item {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.25;
   }
   &__logo {
     font-size: 18px;
-    line-height: 24px;
+    line-height: 1.333;
     font-weight: 700;
     &:hover,
     &:focus {
@@ -20,7 +37,7 @@
     grid-template-columns: 2fr 1fr 1fr 1fr;
     &__title {
       font-size: 18px;
-      line-height: 24px;
+      line-height: 1.333;
     }
     &__wrap {
       display: flex;
@@ -34,10 +51,10 @@
     }
   }
   &__rights {
-    border-top: 0.5px #fff solid;
+    border-top: 0.5px variables.$main-white-color solid;
     text-align: center;
     padding: 28px 0px;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 1.25;
   }
 }

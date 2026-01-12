@@ -5,11 +5,19 @@
 
 
         <div class="footer__content__wrap">
-            <a class="footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-    <?php bloginfo( 'name' ); ?>
-</a>
+              <?php
+          if ( has_custom_logo() ) {
+            the_custom_logo();
+          } else {
+            ?>
+        <a class="footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <?php bloginfo( 'name' ); ?>
+        </a>
+            <?php
+          }
+          ?>
 <?php if ( get_field( 'footer_company_description', 'option' ) ) : ?>
-    <p class="footer-text">
+    <p class="footer__text">
         <?php echo esc_html( get_field( 'footer_company_description', 'option' ) ); ?>
 </p>
 <?php endif; ?>
@@ -48,7 +56,7 @@ if ( $categories ) :
     <?php foreach ( $categories as $category ) :  
         $link = get_category_link( $category->term_id );
     ?>
-        <li class="">
+        <li class="menu-item">
             <a href="<?php echo esc_url( $link ); ?>">
                 <?php echo esc_html( $category->name ); ?>
             </a>
@@ -62,8 +70,8 @@ if ( $categories ) :
         <div class="footer__content__wrap">
              <h3 class="footer__content__title"><?php the_field( 'footer_title_3', 'option' ); ?></h3>
              <ul class="menu-list">
-              <li><a tel="<?php the_field( 'footer_phone_number', 'option' ); ?>"><?php the_field( 'footer_phone_number', 'option' ); ?></a></li>
-              <li><a href="<?php the_field( 'footer_address_link', 'option' ); ?>"><?php the_field( 'footer_address', 'option' ); ?></a></li>
+              <li class="menu-item"><a tel="<?php the_field( 'footer_phone_number', 'option' ); ?>"><?php the_field( 'footer_phone_number', 'option' ); ?></a></li>
+              <li class="menu-item"><a href="<?php the_field( 'footer_address_link', 'option' ); ?>"><?php the_field( 'footer_address', 'option' ); ?></a></li>
              </ul>
         
         </div>
