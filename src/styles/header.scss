@@ -13,13 +13,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &__logo {
+    &__wrap {
       display: flex;
       align-items: center;
       gap: 12px;
-      a {
+      &__logo {
         font-size: 18px;
-        line-height: 24px;
+        line-height: 1.333;
         font-weight: 700;
         transform: none;
       }
@@ -52,7 +52,7 @@
       }
       color: variables.$hidden-links;
       font-size: 18px;
-      line-height: 24px;
+      line-height: 1.333;
       &:hover {
         color: variables.$main-black-color;
       }
