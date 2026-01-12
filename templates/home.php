@@ -160,9 +160,6 @@ if ( $info_title ) :
 <?php endif; ?>
       </div>
 
-
-
-      <div>
       <?php $icon_url = get_field('info_image');
                   if ( $icon_url ) : 
                     $url = $icon_url['url'];
@@ -171,7 +168,6 @@ if ( $info_title ) :
                 <img class="info__image" src="<?php echo esc_url( $url ); ?>" 
                 alt="<?php echo esc_attr( $alt ); ?>" loading="lazy"/>
                 <?php endif; ?>
-      </div>
     </div>
   </div>
 </section>
