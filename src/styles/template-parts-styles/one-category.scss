@@ -1,0 +1,27 @@
+.what-we-do__category__list {
+  &__item {
+    font-size: 20px;
+    line-height: 24px;
+    border: 1px #e5e7eb solid;
+    border-radius: 6px;
+    &__image {
+      aspect-ratio: 1;
+      transition: all 0.5s ease;
+      &__wrap {
+        overflow: hidden;
+      }
+    }
+    &__link {
+      padding: 12px;
+      &__wrap {
+        &:hover {
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          transform: none;
+          .what-we-do__category__list__item__image {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}
