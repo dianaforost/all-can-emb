@@ -40,7 +40,8 @@ get_header();
             <?php
                 if ( $main_picture ) :
             ?>
-            <img class="main-section__image" src="<?php echo esc_url( $main_picture['url'] ); ?>" alt="<?php echo esc_html( $main_picture['alt'] ); ?>"/>
+            <img class="main-section__image" src="<?php echo esc_url( $main_picture['url'] ); ?>" 
+            alt="<?php echo esc_html( $main_picture['alt'] ); ?>" loading="lazy"/>
             <?php endif; ?>
        </div>
     </div>
@@ -110,7 +111,8 @@ $departments_button  = get_field( 'departments_button' );
               <?php $icon_url = get_sub_field('why_us_icon');
                   if ( $icon_url ) : 
                 ?>
-    <img class="why-us__list__item__icon" src="<?php echo esc_url( $icon_url['url'] ); ?>" alt="<?php echo esc_html( $icon_url['alt'] ); ?>">
+    <img class="why-us__list__item__icon" src="<?php echo esc_url( $icon_url['url'] ); ?>" 
+    alt="<?php echo esc_html( $icon_url['alt'] ); ?>" loading="lazy">
 <?php endif; ?>
               <div class="why-us__list__item__wrap">
                   <?php if ( get_sub_field( 'why_us_title' ) ) : ?>
@@ -166,7 +168,8 @@ if ( $info_title ) :
                     $url = $icon_url['url'];
                     $alt = $icon_url['alt'];
        ?>
-                <img class="info__image" src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( $alt ); ?>" />
+                <img class="info__image" src="<?php echo esc_url( $url ); ?>" 
+                alt="<?php echo esc_attr( $alt ); ?>" loading="lazy"/>
                 <?php endif; ?>
       </div>
     </div>
