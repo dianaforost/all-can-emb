@@ -5,48 +5,44 @@ Template Name: home
 get_header();
 ?>
     <main>
-<section class="section main-section" style ="height: 600px;">
+<section class="section main-section">
 <?php 
 $main_picture = get_field('main_picture');
+$main_title = get_field('main_title');
+$main_text = get_field('main_text');
+$button_text = get_field( 'main_button_text' );
+$button_link = get_field( 'main_button_link' );
 if ( $main_picture ) :
 ?>
-<div class="section-image" style="background-image: url('<?php echo esc_url( $main_picture['url'] ); ?>');">
 <?php endif; ?>
     </div>
       <div class ="container">
-       <div class ="content">
-         <ul>
-            <li> <?php  if (get_field( 'main_title' )) {?>
-                    <h1 class="main-title">
-                        <?php the_field("main_title")?>
-                    </h1>
-                    <?php } ?></li>
-            <li><?php  if (get_field( 'main_text' )) {?>
-                    <p class="main-text">
-                        <?php the_field("main_text")?>
-            </p>
-                    <?php } ?>
-              </li>
-            <li>
+       <div class ="inner-container main-section__wrap">
+         <div class="main-section__list">
+            <?php  if ($main_title) {?>
+                <h1 class="main-section__title">
+            <?php echo esc_html( $main_title ); ?>
+                </h1>
+            <?php } ?>
+                <?php  if ($main_text) {?>
+                    <p class="main-section__text">
+                       <?php echo esc_html( $main_text ); ?>
+                    </p>
+                <?php } ?>
 
-           
             <?php
-$button_text = get_field( 'main_button_text' );
-$button_link = get_field( 'main_button_link' );
-
-if ( $button_text && $button_link ) :
-?>
-    <a class="main-button"
+                if ( $button_text && $button_link ) :
+            ?>
+    <a class="main-section__button"
        href="<?php echo esc_url( $button_link['url'] ); ?>"
        target="<?php echo esc_attr( $button_link['target'] ?: '_self' ); ?>">
         <?php echo esc_html( $button_text ); ?>
-</a>
-<?php endif; ?>
-
-              </li>
-         </ul>
+    </a>
+            <?php endif; ?>
+        </div>
+            <img src="<?php echo esc_url( $main_picture['url'] ); ?>" alt="<?php echo esc_html( $main_picture['alt'] ); ?>"/>
        </div>
-</div>
+    </div>
 </section>
 
 
