@@ -115,6 +115,10 @@
   flex-direction: column;
   gap: 40px;
   align-items: center;
+  &__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
   &__list {
     display: flex;
     gap: 24px;
