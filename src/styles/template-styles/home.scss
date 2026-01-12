@@ -129,6 +129,14 @@
       align-items: center;
       text-align: center;
       gap: 24px;
+      &__title {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      &__text {
+        font-size: 18px;
+        line-height: 24px;
+      }
       &__wrap {
         display: flex;
         flex-direction: column;

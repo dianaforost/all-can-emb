@@ -116,11 +116,11 @@ $departments_button  = get_field( 'departments_button' );
 <?php endif; ?>
               <div class="why-us__list__item__wrap">
                   <?php if ( get_sub_field( 'why_us_title' ) ) : ?>
-                    <h3><?php the_sub_field( 'why_us_title' ); ?></h3>
+                    <h3 class="why-us__list__item__title"><?php the_sub_field( 'why_us_title' ); ?></h3>
                 <?php endif; ?>
 
                 <?php if ( get_sub_field( 'why_us_text' ) ) : ?>
-                    <p><?php the_sub_field( 'why_us_text' ); ?></p>
+                    <p class="why-us__list__item__text"><?php the_sub_field( 'why_us_text' ); ?></p>
                 <?php endif; ?>
               </div>
             </li>
