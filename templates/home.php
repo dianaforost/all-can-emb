@@ -6,18 +6,15 @@ get_header();
 ?>
     <main>
 <section class="section main-section">
-<?php 
-$main_picture = get_field('main_picture');
-$main_title = get_field('main_title');
-$main_text = get_field('main_text');
-$button_text = get_field( 'main_button_text' );
-$button_link = get_field( 'main_button_link' );
-if ( $main_picture ) :
-?>
-<?php endif; ?>
-    </div>
       <div class ="container">
        <div class ="inner-container main-section__wrap">
+        <?php 
+        $main_picture = get_field('main_picture');
+        $main_title = get_field('main_title');
+        $main_text = get_field('main_text');
+        $button_text = get_field( 'main_button_text' );
+        $button_link = get_field( 'main_button_link' );
+        ?>
          <div class="main-section__list">
             <?php  if ($main_title) {?>
                 <h1 class="main-section__title">
@@ -40,7 +37,11 @@ if ( $main_picture ) :
     </a>
             <?php endif; ?>
         </div>
-            <img src="<?php echo esc_url( $main_picture['url'] ); ?>" alt="<?php echo esc_html( $main_picture['alt'] ); ?>"/>
+            <?php
+                if ( $main_picture ) :
+            ?>
+            <img class="main-section__image" src="<?php echo esc_url( $main_picture['url'] ); ?>" alt="<?php echo esc_html( $main_picture['alt'] ); ?>"/>
+            <?php endif; ?>
        </div>
     </div>
 </section>
@@ -109,7 +110,7 @@ $departments_button  = get_field( 'departments_button' );
               <?php $icon_url = get_sub_field('why_us_icon');
                   if ( $icon_url ) : 
                 ?>
-    <img class="why-us__list__item__icon" src="<?php echo esc_url( $icon_url ); ?>" alt="">
+    <img class="why-us__list__item__icon" src="<?php echo esc_url( $icon_url['url'] ); ?>" alt="<?php echo esc_html( $icon_url['alt'] ); ?>">
 <?php endif; ?>
               <div class="why-us__list__item__wrap">
                   <?php if ( get_sub_field( 'why_us_title' ) ) : ?>
@@ -162,13 +163,12 @@ if ( $info_title ) :
       <div>
       <?php $icon_url = get_field('info_image');
                   if ( $icon_url ) : 
-                ?>
-    <img class="info__image" src="<?php echo esc_url( $icon_url ); ?>" alt="">
-<?php endif; ?>
+                    $url = $icon_url['url'];
+                    $alt = $icon_url['alt'];
+       ?>
+                <img class="info__image" src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( $alt ); ?>" />
+                <?php endif; ?>
       </div>
-
-
-
     </div>
   </div>
 </section>
