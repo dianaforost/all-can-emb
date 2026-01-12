@@ -62,7 +62,8 @@
     padding: 60px 0px;
     align-items: center;
     a {
-      &:hover {
+      &:hover,
+      &:focus {
         color: variables.$hover-links;
       }
     }
@@ -101,7 +102,8 @@
       -moz-transition: all 0.5s;
       -o-transition: all 0.5s;
       transition: all 0.5s;
-      &:hover {
+      &:hover,
+      &:focus {
         cursor: pointer;
         transform: scale(1.04);
       }
@@ -186,7 +188,8 @@
         height: 1px;
         background-color: variables.$main-black-color;
       }
-      &:hover {
+      &:hover,
+      &:focus {
         color: variables.$hover-links;
         &::after {
           background-color: variables.$hover-links;
