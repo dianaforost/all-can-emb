@@ -24,37 +24,37 @@
         transform: none;
       }
     }
-  }
-  ul {
-    display: flex;
-    gap: 26px;
-    .page_item {
-      &.current_page_item a {
-        color: variables.$main-black-color;
-        &::after {
-          opacity: 1;
+    &__list {
+      display: flex;
+      gap: 26px;
+      .page_item {
+        &.current_page_item a {
+          color: variables.$main-black-color;
+          &::after {
+            opacity: 1;
+          }
         }
       }
-    }
-    a {
-      position: relative;
-      padding: 4px 8px;
-      &::after {
-        opacity: 0;
-        position: absolute;
-        content: "";
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 2px;
-        background-color: variables.$main-black-color;
-        transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 1s;
-      }
-      color: variables.$hidden-links;
-      font-size: 18px;
-      line-height: 1.333;
-      &:hover {
-        color: variables.$main-black-color;
+      a {
+        position: relative;
+        padding: 4px 8px;
+        &::after {
+          opacity: 0;
+          position: absolute;
+          content: "";
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background-color: variables.$main-black-color;
+          transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 1s;
+        }
+        color: variables.$hidden-links;
+        font-size: 18px;
+        line-height: 1.333;
+        &:hover {
+          color: variables.$main-black-color;
+        }
       }
     }
   }

@@ -28,7 +28,7 @@
 wp_nav_menu([
   'theme_location' => 'header',
   'container'      => false,
-  'menu_class'     => 'header__page-list',
+  'menu_class'     => 'header__content__list',
 ]);
 ?>
             </div>
