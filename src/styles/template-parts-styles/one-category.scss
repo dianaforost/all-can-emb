@@ -1,0 +1,43 @@
+.what-we-do__category__list {
+  &__item {
+    font-size: 20px;
+    line-height: 24px;
+    &__image {
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+      transition: all 0.5s ease;
+      &__wrap {
+        transition: all 0.5s ease;
+        position: absolute;
+        background-color: color-mix(in oklab, black 40%, transparent);
+        inset: 0;
+      }
+    }
+    &__link {
+      inset: 0;
+      position: absolute;
+      color: #fff;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__wrap {
+        overflow: hidden;
+        position: relative;
+        border-radius: 6px;
+        &:hover {
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          transform: none;
+          .what-we-do__category__list__item__image {
+            transform: scale(1.1);
+          }
+          .what-we-do__category__list__item__image__wrap {
+            background-color: color-mix(in oklab, black 50%, transparent);
+          }
+        }
+      }
+    }
+  }
+}
