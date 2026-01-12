@@ -4,6 +4,9 @@
   .custom-logo-link {
     width: 100px;
     transform: none;
+    .custom-logo {
+      border-radius: 6px;
+    }
   }
   a {
     color: #fff;
