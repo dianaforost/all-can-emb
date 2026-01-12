@@ -1,62 +1,60 @@
+@use "../variables";
+.custom-logo {
+  width: 65px;
+}
 .main-section {
   margin-bottom: 0;
-}
-.section-image {
-  padding: 100px 100px 100px 100px;
-  position: absolute;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: inherit;
-  overflow: hidden;
-  z-index: -1;
-}
-.main-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 40px;
-  line-height: 48px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.main-text {
-  font-size: 18px;
-  line-height: 24px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: 500;
-}
-.main-button {
-  border: none;
-  padding: 18px 35px;
-  background-color: #262626;
-  font-size: 16px;
-  line-height: 20px;
-  color: #fff;
-  border: 0.5px #262626 solid;
-  border-radius: 5px;
-  &:hover {
-    background-color: #fff;
-    color: #262626;
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 134px 0;
+    gap: 24px;
   }
-}
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 230px 191px;
-
-  ul {
+  &__list {
     display: flex;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
+    align-items: flex-start;
+  }
+  &__title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  &__text {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 500;
+    text-align: left;
+  }
+  &__button {
+    border: none;
+    padding: 18px 35px;
+    background-color: variables.$main-black-color;
+    font-size: 16px;
+    line-height: 20px;
+    color: variables.$main-white-color;
+    border: 0.5px variables.$main-black-color solid;
+    border-radius: 5px;
+    &:hover,
+    &:focus {
+      background-color: variables.$main-white-color;
+      color: variables.$main-black-color;
+    }
+  }
+  &__image {
+    border-radius: 6px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
 }
+
 .depart {
-  background-color: #f9fafb;
+  background-color: variables.$grey-bg-color;
   &__content {
     display: flex;
     flex-direction: column;
@@ -64,8 +62,9 @@
     padding: 60px 0px;
     align-items: center;
     a {
-      &:hover {
-        color: #364153;
+      &:hover,
+      &:focus {
+        color: variables.$hover-links;
       }
     }
     &__link {
@@ -78,7 +77,7 @@
         bottom: 0;
         width: 100%;
         height: 1px;
-        background-color: #262626;
+        background-color: variables.$main-black-color;
       }
     }
   }
@@ -94,7 +93,7 @@
     justify-content: space-between;
     &__item {
       padding: 30px 70px;
-      background: #fff;
+      background: variables.$main-white-color;
       border-radius: 5px;
       text-align: center;
       font-size: 20px;
@@ -103,7 +102,8 @@
       -moz-transition: all 0.5s;
       -o-transition: all 0.5s;
       transition: all 0.5s;
-      &:hover {
+      &:hover,
+      &:focus {
         cursor: pointer;
         transform: scale(1.04);
       }
@@ -129,6 +129,14 @@
       align-items: center;
       text-align: center;
       gap: 24px;
+      &__title {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      &__text {
+        font-size: 18px;
+        line-height: 24px;
+      }
       &__wrap {
         display: flex;
         flex-direction: column;
@@ -139,14 +147,18 @@
       &__icon {
         width: 64px;
         padding: 16px;
-        background-color: #f3f4f6;
+        background-color: variables.$icon-background;
+        border-radius: 6px;
       }
     }
   }
 }
 
 .info {
-  background-color: #f9fafb;
+  background-color: variables.$grey-bg-color;
+  &__image {
+    border-radius: 6px;
+  }
   &__wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -182,10 +194,14 @@
         bottom: 0;
         width: 100%;
         height: 1px;
-        background-color: #262626;
+        background-color: variables.$main-black-color;
       }
-      &:hover {
-        color: #364153;
+      &:hover,
+      &:focus {
+        color: variables.$hover-links;
+        &::after {
+          background-color: variables.$hover-links;
+        }
       }
     }
   }
