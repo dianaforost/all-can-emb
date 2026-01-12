@@ -1,6 +1,7 @@
+@use "./variables";
 .footer {
-  background-color: #262626;
-  color: #fff;
+  background-color: variables.$main-black-color;
+  color: variables.$main-white-color;
   .custom-logo-link {
     width: 100px;
     transform: none;
@@ -9,7 +10,7 @@
     }
   }
   a {
-    color: #fff;
+    color: variables.$main-white-color;
   }
   .menu-item {
     font-size: 16px;
@@ -50,7 +51,7 @@
     }
   }
   &__rights {
-    border-top: 0.5px #fff solid;
+    border-top: 0.5px variables.$main-white-color solid;
     text-align: center;
     padding: 28px 0px;
     font-size: 16px;
