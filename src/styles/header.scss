@@ -1,7 +1,11 @@
 @use "./variables";
 .header {
-  .custom-logo {
-    width: 70px;
+  .custom-logo-link {
+    transform: none;
+    .custom-logo {
+      width: 70px;
+      border-radius: 6px;
+    }
   }
   position: fixed;
   background-color: variables.$main-white-color;
