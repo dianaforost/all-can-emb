@@ -4,7 +4,13 @@ Template Name: contacts
 */
 get_header();
 ?>
-<h2>Contact page</h2>
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="inner-container"></div>
+    </div>
+  </section>
+</main>
 
 
 
