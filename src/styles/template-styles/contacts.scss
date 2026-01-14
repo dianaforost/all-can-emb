@@ -1,3 +1,4 @@
+@use "../variables";
 .contacts {
   &__wrap {
     display: flex;
@@ -50,7 +51,20 @@
         &__wrap {
           display: flex;
           gap: 8px;
+          font-size: 14px;
+          line-height: 18px;
+          &__title {
+            color: variables.$hover-links;
+          }
         }
+      }
+      &__name {
+        font-size: 20px;
+        line-height: 28px;
+      }
+      &__title {
+        font-size: 14px;
+        line-height: 20px;
       }
     }
   }
