@@ -17,6 +17,7 @@ get_header();
       </div>
     </div>
   </section>
+
   <section class="section">
     <div cass="container">
       <div class="inner-container">
@@ -40,7 +41,7 @@ get_header();
           <!-- EMAILS -->
           <?php if ( have_rows('our_team_member_email_wrap') ) : ?>
             <div class="our-team__member__item__contacts__wrap">
-            <p class="our-team__member-email">Email:</p>
+            <p class="our-team__member__item__contacts__wrap__title">Email:</p>
               <?php
     $emails = [];
 
@@ -63,7 +64,7 @@ get_header();
         <!-- EXTENSIONS -->
         <?php if ( have_rows('our_team_member_extension_wrap') ) : ?>
           <div class="our-team__member__item__contacts__wrap">
-             <p class="">Ext:</p>
+             <p class="our-team__member__item__contacts__wrap__title">Ext:</p>
             <?php
             $extensions = [];
 
