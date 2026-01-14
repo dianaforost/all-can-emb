@@ -39,13 +39,6 @@
       &:focus {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
-      &__email {
-        &:hover,
-        &:focus {
-          transform: none;
-          color: variables.$hover-links;
-        }
-      }
       &__wrap {
         display: flex;
         flex-direction: column;
@@ -62,6 +55,13 @@
           line-height: 18px;
           &__title {
             color: variables.$hover-links;
+          }
+          &__link {
+            &:hover,
+            &:focus {
+              transform: none;
+              color: variables.$hover-links;
+            }
           }
         }
       }

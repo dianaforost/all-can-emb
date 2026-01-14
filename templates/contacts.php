@@ -34,34 +34,36 @@ get_header();
           <?php echo esc_html( get_sub_field('our_team_member_title') ); ?>
         </p>
         </div>
+        
+        <div class="our-team__member__item__contacts">
+          
+          <!-- EMAILS -->
+          <?php if ( have_rows('our_team_member_email_wrap') ) : ?>
+            <div class="our-team__member__item__contacts__wrap">
+            <p class="our-team__member-email">Email:</p>
+              <?php
+    $emails = [];
 
-       <div class="our-team__member__item__contacts">
+    while ( have_rows('our_team_member_email_wrap') ) : the_row();
+      $email = get_sub_field('our_team_member_email');
 
-        <!-- EMAILS -->
-        <?php if ( have_rows('our_team_member_email_wrap') ) : ?>
-          <div class="our-team__member__item__contacts__wrap">
-            <?php
-            $emails = [];
+      if ( $email ) {
+        $emails[] =
+          '<a class="our-team__member__item__contacts__wrap__link" href="mailto:' . esc_attr( $email ) . '">' .
+          esc_html( $email ) .
+          '</a>';
+      }
+    endwhile;
 
-            while ( have_rows('our_team_member_email_wrap') ) : the_row();
-              $email = get_sub_field('our_team_member_email');
-
-              if ( $email ) {
-                $emails[] =
-                  '<a class="our-team__member__item__email" href="mailto:' . esc_attr( $email ) . '">' .
-                  esc_html( $email ) .
-                  '</a>';
-              }
-            endwhile;
-
-            echo implode(', ', $emails);
-            ?>
-          </div>
-        <?php endif; ?>
+    echo implode(', ', $emails);
+    ?>
+    </div>
+<?php endif; ?>
 
         <!-- EXTENSIONS -->
         <?php if ( have_rows('our_team_member_extension_wrap') ) : ?>
           <div class="our-team__member__item__contacts__wrap">
+             <p class="">Ext:</p>
             <?php
             $extensions = [];
 
