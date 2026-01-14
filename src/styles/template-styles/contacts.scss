@@ -27,6 +27,9 @@
     gap: 24px;
     grid-template-columns: repeat(2, 1fr);
     &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
       border: 1px #ebe6e7 solid;
       border-radius: 6px;
       padding: 28px;
@@ -34,6 +37,20 @@
       &:hover,
       &:focus {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &__wrap {
+          display: flex;
+          gap: 8px;
+        }
       }
     }
   }

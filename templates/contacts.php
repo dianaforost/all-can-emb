@@ -25,19 +25,35 @@ get_header();
         <ul class="our-team__member">
           <?php while ( have_rows( 'our_team_member' ) ) : the_row();?>
           <li class="our-team__member__item">
-            <h4><?php echo get_sub_field('our_team_member_full_name') ?></h4>
-            <p><?php echo get_sub_field('our_team_member_title') ?></p>
+           <div class="our-team__member__item__wrap">
+             <h4><?php echo get_sub_field('our_team_member_full_name') ?></h4>
+              <p><?php echo get_sub_field('our_team_member_title') ?></p> 
+           </div>
             <?php if(have_rows('our_team_member_contacts')) :?>
-            <div>
+            <div class="our-team__member__item__contacts">
               <?php while (have_rows('our_team_member_contacts')) : the_row(); ?>
+              <div class="our-team__member__item__contacts__wrap">
               <p><?php echo get_sub_field('our_team_member_contact_title') ?></p>
-              <?php if ( have_rows('our_team_member_contact_repeater')) : ?>
-                <div>
-                  <?php while ( have_rows('our_team_member_contact_repeater')) : the_row(); ?>
-                  <p><?php echo get_sub_field('our_team_member_contact') ?></p>
-                  <?php endwhile ?>
-                </div>
-              <?php endif ?>
+
+
+              <?php if ( have_rows('our_team_member_contact_repeater') ) : ?>
+              <div>
+                <?php
+                $i = 0;
+
+                while ( have_rows('our_team_member_contact_repeater') ) : the_row();
+                  if ( $i > 0 ) {
+                    echo ', ';
+                  }
+                  echo esc_html( get_sub_field('our_team_member_contact') );
+                  $i++;
+                endwhile;
+                ?>
+              </div>
+            <?php endif; ?>
+
+
+            </div>
               <?php endwhile ?>
             </div>
             <?php endif ?>
