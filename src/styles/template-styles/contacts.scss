@@ -14,3 +14,27 @@
     }
   }
 }
+
+.our-team {
+  &__title {
+    font-size: 32px;
+    line-height: 1.25;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  &__member {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    &__item {
+      border: 1px #ebe6e7 solid;
+      border-radius: 6px;
+      padding: 28px;
+      transition: all 0.5s ease;
+      &:hover,
+      &:focus {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+    }
+  }
+}
