@@ -1,5 +1,9 @@
 @use "../variables";
 .contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
   &__wrap {
     display: flex;
     flex-direction: column;
@@ -13,6 +17,21 @@
       font-size: 16px;
       line-height: 1.25;
     }
+  }
+  &__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__address {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.333;
+  }
+  &__phone {
+    font-size: 18px;
+    line-height: 1.333;
   }
 }
 
@@ -69,7 +88,7 @@
             &:hover,
             &:focus {
               transform: none;
-              color: variables.$hover-links;
+              color: #e40505;
             }
           }
         }

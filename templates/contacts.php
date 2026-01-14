@@ -7,13 +7,26 @@ get_header();
 <main>
   <section class="section">
     <div class="container">
-      <div class="inner-container contacts__wrap">
+      <div class="inner-container contacts">
         <?php $contacts_title=get_field('contacts_title');
         $contacts_text= get_field('contacts_text'); 
         if($contacts_title && $contacts_text):?>
-          <h2 class="contacts__wrap__title"><?php echo esc_html($contacts_title) ?></h2>
-          <p class="contacts__wrap__text"> <?php echo esc_html($contacts_text) ?></p>
+         <div class="contacts__wrap">
+           <h2 class="contacts__wrap__title"><?php echo esc_html($contacts_title) ?></h2>
+            <p class="contacts__wrap__text"> <?php echo esc_html($contacts_text) ?></p>
+         </div>
         <?php endif ?>
+        <div class="contacts__container">
+        <?php $company_address= get_field('company_address');
+        $company_address_link =get_field('company_address_link');
+        if($company_address && $company_address_link): ?>
+          <a class="contacts__address" href="<?php echo esc_html($company_address_link) ?>"><?php echo wp_kses_post( wpautop( $company_address ) ); ?></a>
+          <?php endif ?>
+          <?php $company_phone_number = get_field('company_phone_number');
+        if($company_phone_number): ?>
+        <a class="contacts__phone" href="tel:<?php echo esc_html($company_phone_number) ?>"><?php echo esc_html($company_phone_number) ?></a>
+        <?php endif ?>
+      </div>
       </div>
     </div>
   </section>
