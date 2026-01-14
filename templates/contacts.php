@@ -21,46 +21,71 @@ get_header();
     <div cass="container">
       <div class="inner-container">
        <h3 class="our-team__title"><?php echo esc_html(get_field('our_team_title')) ?></h3>
-       <?php if (have_rows('our_team_member')) : ?>
-        <ul class="our-team__member">
-          <?php while ( have_rows( 'our_team_member' ) ) : the_row();?>
-          <li class="our-team__member__item">
-           <div class="our-team__member__item__wrap">
-             <h4 class="our-team__member__item__name"><?php echo get_sub_field('our_team_member_full_name') ?></h4>
-              <p class="our-team__member__item__title"><?php echo get_sub_field('our_team_member_title') ?></p> 
-           </div>
-            <?php if(have_rows('our_team_member_contacts')) :?>
-            <div class="our-team__member__item__contacts">
-              <?php while (have_rows('our_team_member_contacts')) : the_row(); ?>
-              <div class="our-team__member__item__contacts__wrap">
-              <p class="our-team__member__item__contacts__wrap__title"><?php echo get_sub_field('our_team_member_contact_title') ?>:</p>
+       <?php if ( have_rows('our_team_member') ) : ?>
+  <ul class="our-team__member">
+    <?php while ( have_rows('our_team_member') ) : the_row(); ?>
+      <li class="our-team__member__item">
+        <div class="our-team__member__item__wrap">
+          <h4 class="our-team__member__item__name">
+          <?php echo esc_html( get_sub_field('our_team_member_full_name') ); ?>
+       </h4>
 
+        <p class="our-team__member__item__title">
+          <?php echo esc_html( get_sub_field('our_team_member_title') ); ?>
+        </p>
+        </div>
 
-              <?php if ( have_rows('our_team_member_contact_repeater') ) : ?>
-              <div>
-                <?php
-                $i = 0;
+       <div class="our-team__member__item__contacts">
 
-                while ( have_rows('our_team_member_contact_repeater') ) : the_row();
-                  if ( $i > 0 ) {
-                    echo ', ';
-                  }
-                  echo esc_html( get_sub_field('our_team_member_contact') );
-                  $i++;
-                endwhile;
-                ?>
-              </div>
-            <?php endif; ?>
+        <!-- EMAILS -->
+        <?php if ( have_rows('our_team_member_email_wrap') ) : ?>
+          <div class="our-team__member__item__contacts__wrap">
+            <?php
+            $emails = [];
 
+            while ( have_rows('our_team_member_email_wrap') ) : the_row();
+              $email = get_sub_field('our_team_member_email');
 
-            </div>
-              <?php endwhile ?>
-            </div>
-            <?php endif ?>
-          </li>
-          <?php endwhile ?>
-        </ul>
-        <?Php endif ?>
+              if ( $email ) {
+                $emails[] =
+                  '<a class="our-team__member__item__email" href="mailto:' . esc_attr( $email ) . '">' .
+                  esc_html( $email ) .
+                  '</a>';
+              }
+            endwhile;
+
+            echo implode(', ', $emails);
+            ?>
+          </div>
+        <?php endif; ?>
+
+        <!-- EXTENSIONS -->
+        <?php if ( have_rows('our_team_member_extension_wrap') ) : ?>
+          <div class="our-team__member__item__contacts__wrap">
+            <?php
+            $extensions = [];
+
+            while ( have_rows('our_team_member_extension_wrap') ) : the_row();
+              $ext = get_sub_field('our_team_member_extension');
+
+              if ( $ext ) {
+                $extensions[] =
+                  '<p>' .
+                  esc_html( $ext ) .
+                  '</p>';
+              }
+            endwhile;
+
+            echo implode(', ', $extensions);
+            ?>
+          </div>
+        <?php endif; ?>
+       </div>
+
+      </li>
+    <?php endwhile; ?>
+  </ul>
+<?php endif; ?>
       </div>
     </div>
   </section>

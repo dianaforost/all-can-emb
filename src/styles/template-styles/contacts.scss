@@ -39,18 +39,25 @@
       &:focus {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
+      &__email {
+        &:hover,
+        &:focus {
+          transform: none;
+          color: variables.$hover-links;
+        }
+      }
       &__wrap {
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 2px;
       }
       &__contacts {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 4px;
         &__wrap {
           display: flex;
-          gap: 8px;
+          gap: 2px;
           font-size: 14px;
           line-height: 18px;
           &__title {
