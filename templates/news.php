@@ -5,9 +5,10 @@ Template Name: news
 get_header();
 ?>
 <main>
- <section class="section">
+ <section class="section news">
   <div class="conatiner">
     <div class="inner-container">
+      <h2 class="news__title"><?php the_title(); ?></h2>
       <?php $news_items = get_field('add_new_news_item');
       if ( $news_items ) {
     usort($news_items, function($a, $b) {
@@ -24,13 +25,21 @@ get_header();
                 $text = $news['new_news_item_description'];
                 $date = $news['new_news_item_date'];
                 $datetime = DateTime::createFromFormat('F j, Y', $date)->format('Y-m-d');
+                $image = $news['new_news_item_picture'];
             ?>
             <li>
-                <h3><?php echo esc_html($title); ?></h3>
+                  <img 
+                    class="news-item__image" 
+                    src="<?php echo esc_url($image['url']); ?>" 
+                    alt="<?php echo esc_attr($image['alt']); ?>" 
+                  />
+                <div>
+                  <h3><?php echo esc_html($title); ?></h3>
                 <div><?php echo wp_kses_post(wpautop($text)); ?></div>
                 <time datetime="<?php echo esc_attr($datetime); ?>">
                     <?php echo esc_html($date); ?>
                 </time>
+                </div>
             </li>
         <?php endforeach; ?>
     </ul>

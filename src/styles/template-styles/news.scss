@@ -1,3 +1,8 @@
-main {
-  padding-top: 150px;
+.news {
+  padding-top: 120px;
+  &__title {
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.2;
+  }
 }
