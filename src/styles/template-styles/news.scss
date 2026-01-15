@@ -14,6 +14,8 @@
     &__item {
       display: flex;
       gap: 20px;
+      padding: 20px 0;
+      border-bottom: 2px variables.$icon-background solid;
       &__image {
         width: 20%;
         max-width: 250px;
