@@ -5,7 +5,7 @@ Template Name: contacts
 get_header();
 ?>
 <main>
-  <section class="section">
+  <section class="section contacts-section">
     <div class="container">
       <div class="inner-container contacts">
         <?php $contacts_title=get_field('contacts_title');
