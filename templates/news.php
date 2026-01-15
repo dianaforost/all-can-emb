@@ -45,12 +45,14 @@ get_header();
         <?php endforeach; ?>
     </ul>
   <?php else : ?>
-  <?php $no_news=get_field('no_news');
+ <div class="news__no-news">
+   <?php $no_news=get_field('no_news');
   $no_news_title = get_field("no_news_button_title");
   $no_news_link = get_field("no_news_button_link"); ?>
-  <img width="60px" src="<?php echo get_template_directory_uri()?>/assets/images/no-data.png" />
-  <p class="news__no-news"><?php echo esc_html($no_news) ?></p>
-  <a href="<?php echo esc_url($no_news_link["url"]); ?>"><?php echo esc_html($no_news_title) ?></a>
+  <img class="news__no-news__image" src="<?php echo get_template_directory_uri()?>/assets/images/no-data.png" />
+  <p class="news__no-news__title"><?php echo esc_html($no_news) ?></p>
+  <a class="news__no-news__link" href="<?php echo esc_url($no_news_link["url"]); ?>"><?php echo esc_html($no_news_title) ?></a>
+ </div>
   <?php endif; ?>
     </div>
   </div>
