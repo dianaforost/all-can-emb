@@ -18,7 +18,7 @@ get_header();
     });
 }
       if ( $news_items ) : ?>
-    <ul>
+    <ul class="news__list">
         <?php foreach ( $news_items as $news ) : ?>
             <?php 
                 $title = $news['new_news_item_title'];
@@ -27,18 +27,19 @@ get_header();
                 $datetime = DateTime::createFromFormat('F j, Y', $date)->format('Y-m-d');
                 $image = $news['new_news_item_picture'];
             ?>
-            <li>
+            <li class="news__list__item">
                   <img 
-                    class="news-item__image" 
+                    class="news__list__item__image" 
                     src="<?php echo esc_url($image['url']); ?>" 
                     alt="<?php echo esc_attr($image['alt']); ?>" 
+                    loading="lazy"
                   />
-                <div>
-                  <h3><?php echo esc_html($title); ?></h3>
-                <div><?php echo wp_kses_post(wpautop($text)); ?></div>
-                <time datetime="<?php echo esc_attr($datetime); ?>">
-                    <?php echo esc_html($date); ?>
-                </time>
+                <div class="news__list__item__wrap">
+                  <h3 class="news__list__item__wrap__title"><?php echo esc_html($title); ?></h3>
+                  <time class="news__list__item__wrap__date" datetime="<?php echo esc_attr($datetime); ?>">
+                      <?php echo esc_html($date); ?>
+                  </time>
+                <div class="news__list__item__wrap__text"><?php echo wp_kses_post(wpautop($text)); ?></div>
                 </div>
             </li>
         <?php endforeach; ?>

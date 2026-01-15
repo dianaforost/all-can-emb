@@ -1,8 +1,41 @@
+@use "../variables";
 .news {
   padding-top: 120px;
   &__title {
     text-align: center;
     font-size: 40px;
     line-height: 1.2;
+    margin-bottom: 40px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    &__item {
+      display: flex;
+      gap: 20px;
+      &__image {
+        width: 20%;
+        max-width: 250px;
+        height: 100%;
+      }
+      &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 80%;
+        &__title {
+          font-size: 24px;
+        }
+        &__date {
+          color: variables.$hidden-links;
+        }
+        &__text {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    }
   }
 }
