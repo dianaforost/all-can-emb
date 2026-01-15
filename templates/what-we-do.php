@@ -5,7 +5,7 @@ Template Name: what we do
 get_header();
 ?>
 <main>
-   <section class ="section">
+   <section class ="section what-we-do">
     <div class="container">
       <div class="inner-container what-we-do__wrap">
        

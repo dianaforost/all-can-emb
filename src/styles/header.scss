@@ -14,7 +14,8 @@
   max-width: 1760px;
   z-index: 100;
   &__content {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(1, 3.53%) auto repeat(1, 4.83%);
     justify-content: space-between;
     align-items: center;
     &__wrap {
@@ -42,6 +43,9 @@
       a {
         position: relative;
         padding: 4px 8px;
+        color: variables.$hidden-links;
+        font-size: 24px;
+        line-height: 1.166;
         &::after {
           opacity: 0;
           position: absolute;
@@ -53,9 +57,6 @@
           background-color: variables.$main-black-color;
           transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 1s;
         }
-        color: variables.$hidden-links;
-        font-size: 18px;
-        line-height: 1.333;
         &:hover {
           color: variables.$main-black-color;
         }
