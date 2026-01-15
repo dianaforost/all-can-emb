@@ -20,11 +20,11 @@ get_header();
         <?php $company_address= get_field('company_address');
         $company_address_link =get_field('company_address_link');
         if($company_address && $company_address_link): ?>
-          <a class="contacts__address" href="<?php echo esc_html($company_address_link) ?>"><?php echo wp_kses_post( wpautop( $company_address ) ); ?></a>
+         <a class="contacts__address" href="<?php echo esc_html($company_address_link) ?>"> <svg width="40px" height="40px"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-map"></use></svg><?php echo wp_kses_post( wpautop( $company_address ) ); ?></a>
           <?php endif ?>
           <?php $company_phone_number = get_field('company_phone_number');
         if($company_phone_number): ?>
-        <a class="contacts__phone" href="tel:<?php echo esc_html($company_phone_number) ?>"><?php echo esc_html($company_phone_number) ?></a>
+        <a class="contacts__phone" href="tel:<?php echo esc_html($company_phone_number) ?>"><svg width="40px" height="40px"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-phone"></use></svg><p><?php echo esc_html($company_phone_number) ?></p></a>
         <?php endif ?>
       </div>
       </div>
