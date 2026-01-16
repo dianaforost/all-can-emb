@@ -26,8 +26,8 @@ $category_link = get_term_link( $category );
       <img class="what-we-do__category__list__item__image"
            src="<?php echo esc_url($category_image['url']); ?>"
            alt="<?php echo esc_attr($category->name); ?>">
-      <div class="what-we-do__category__list__item__image__wrap"></div>
-    <?php endif; ?>
+           <?php endif; ?>
+           <div class="what-we-do__category__list__item__image__wrap"></div>
 
     <div class="what-we-do__category__list__item__link">
       <p><?php echo esc_html($category->name); ?></p>
