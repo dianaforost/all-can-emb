@@ -41,7 +41,7 @@ get_header();
                 if ( $main_picture ) :
             ?>
             <img class="main-section__image" src="<?php echo esc_url( $main_picture['url'] ); ?>" 
-            alt="<?php echo esc_html( $main_picture['alt'] ); ?>" loading="lazy"/>
+            alt="<?php echo esc_html( $main_picture['alt'] ); ?>"/>
             <?php endif; ?>
        </div>
     </div>

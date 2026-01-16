@@ -60,6 +60,7 @@ if ( $policy_title && $policy_text ) :
                 <img width="60"
                   src="<?php echo esc_url( $company_logo['url'] ); ?>" 
                   alt="<?php echo esc_attr( $company_logo['alt'] ); ?>" 
+                  loading="lazy"
                 />
               <?php endif; ?>
               <p><?php echo esc_html( get_sub_field('company_title'));?></p>
