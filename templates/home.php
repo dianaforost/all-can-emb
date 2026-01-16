@@ -58,25 +58,25 @@ get_header();
         <?php endif; ?>
 
 
-<?php 
-$categories = get_categories([
-    'hide_empty' => false,
-    'exclude'    => [1],
-    'number'     => 3,
-]);
+<?php
+        $categories = get_terms([
+          'taxonomy'   => 'samples-categories',
+          'hide_empty' => false,
+          'number'     => 3,
+        ]);
 
 if ( $categories ) :
 ?>
 <ul class="depart__list">
-    <?php foreach ( $categories as $category ) :  
-        $link = get_category_link( $category->term_id );
-    ?>
-        <li>
-            <a class="depart__list__item" href="<?php echo esc_url( $link ); ?>">
-                <?php echo esc_html( $category->name ); ?>
-            </a>
-        </li>
-    <?php endforeach; ?>
+     <?php foreach ( $categories as $category ) : ?>
+              <?php
+              get_template_part(
+                'template-parts/one-category',
+                null,
+                [ 'category' => $category ]
+              );
+              ?>
+            <?php endforeach; ?>
 </ul>
 <?php endif; ?>
 <?php 
@@ -93,6 +93,8 @@ $departments_button  = get_field( 'departments_button' );
       </div>
     </div>
 </section>
+
+
 <section class="section">
   <div class="container">
     <div class="inner-container why-us">
