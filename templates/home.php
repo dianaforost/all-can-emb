@@ -155,9 +155,12 @@ if ( $info_title ) :
 
 <?php if ( $info_button_text && $info_button_link ) : ?>
     <a class="info__text-wrap__button"
-       href="<?php echo esc_url( $info_button_link['url'] ); ?>"
-       target="<?php echo esc_attr( $info_button_link['target'] ?: '_self' ); ?>">
+        href="<?php echo esc_url( $info_button_link['url'] ); ?>"
+        target="<?php echo esc_attr( $info_button_link['target'] ?: '_self' ); ?>">
+        <p class="info__text-wrap__button__text">
         <?php echo esc_html( $info_button_text ); ?>
+        </p>
+        <svg class="info__text-wrap__button__icon" width="30" height="30"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow-right"></use></svg>
     </a>
 <?php endif; ?>
       </div>
