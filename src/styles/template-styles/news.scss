@@ -1,0 +1,70 @@
+@use "../variables";
+.news {
+  padding-top: 120px;
+  &__title {
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 40px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    &__item {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 2px variables.$icon-background solid;
+      &__image {
+        width: 20%;
+        max-width: 250px;
+        height: 100%;
+      }
+      &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 80%;
+        &__title {
+          font-size: 24px;
+        }
+        &__date {
+          color: variables.$hidden-links;
+        }
+        &__text {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    }
+  }
+  &__no-news {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    &__image {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+    &__title {
+      font-size: 24px;
+    }
+    &__link {
+      padding: 18px 35px;
+      background-color: variables.$main-black-color;
+      font-size: 16px;
+      line-height: 1.25;
+      color: variables.$main-white-color;
+      border: 0.5px variables.$main-black-color solid;
+      border-radius: 5px;
+      &:hover,
+      &:focus {
+        background-color: variables.$main-white-color;
+        color: variables.$main-black-color;
+      }
+    }
+  }
+}
