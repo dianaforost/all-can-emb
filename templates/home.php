@@ -58,25 +58,25 @@ get_header();
         <?php endif; ?>
 
 
-<?php 
-$categories = get_categories([
-    'hide_empty' => false,
-    'exclude'    => [1],
-    'number'     => 3,
-]);
+<?php
+        $categories = get_terms([
+          'taxonomy'   => 'samples-categories',
+          'hide_empty' => false,
+          'number'     => 3,
+        ]);
 
 if ( $categories ) :
 ?>
 <ul class="depart__list">
-    <?php foreach ( $categories as $category ) :  
-        $link = get_category_link( $category->term_id );
-    ?>
-        <li>
-            <a class="depart__list__item" href="<?php echo esc_url( $link ); ?>">
-                <?php echo esc_html( $category->name ); ?>
-            </a>
-        </li>
-    <?php endforeach; ?>
+     <?php foreach ( $categories as $category ) : ?>
+              <?php
+              get_template_part(
+                'template-parts/one-category',
+                null,
+                [ 'category' => $category ]
+              );
+              ?>
+            <?php endforeach; ?>
 </ul>
 <?php endif; ?>
 <?php 
@@ -93,6 +93,8 @@ $departments_button  = get_field( 'departments_button' );
       </div>
     </div>
 </section>
+
+
 <section class="section">
   <div class="container">
     <div class="inner-container why-us">
@@ -153,9 +155,12 @@ if ( $info_title ) :
 
 <?php if ( $info_button_text && $info_button_link ) : ?>
     <a class="info__text-wrap__button"
-       href="<?php echo esc_url( $info_button_link['url'] ); ?>"
-       target="<?php echo esc_attr( $info_button_link['target'] ?: '_self' ); ?>">
+        href="<?php echo esc_url( $info_button_link['url'] ); ?>"
+        target="<?php echo esc_attr( $info_button_link['target'] ?: '_self' ); ?>">
+        <p class="info__text-wrap__button__text">
         <?php echo esc_html( $info_button_text ); ?>
+        </p>
+        <svg class="info__text-wrap__button__icon" width="30" height="30"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow-right"></use></svg>
     </a>
 <?php endif; ?>
       </div>

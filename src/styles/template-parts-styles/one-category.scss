@@ -6,6 +6,7 @@
       object-fit: cover;
       aspect-ratio: 4 / 3;
       transition: all 0.5s ease;
+      width: 100%;
       &__wrap {
         transition: all 0.5s ease;
         position: absolute;
@@ -27,6 +28,7 @@
         overflow: hidden;
         position: relative;
         border-radius: 6px;
+        height: 100%;
         &:hover {
           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
           transform: none;

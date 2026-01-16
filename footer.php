@@ -45,10 +45,10 @@
         <div class="footer__content__wrap">
            <h3 class="footer__content__title"><?php the_field( 'footer_title_2', 'option' ); ?></h3>
 <?php 
-$categories = get_categories([
-    'hide_empty' => false,
-    'exclude'    => [1]
-]);
+$categories = get_terms([
+          'taxonomy'   => 'samples-categories',
+          'hide_empty' => false,
+        ]);
 
 if ( $categories ) :
 ?>
