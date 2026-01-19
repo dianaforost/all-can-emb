@@ -14,6 +14,7 @@ get_header();
         <?php
         $sample_title = get_field('sample_title');
         $sample_image = get_field('sample_image');
+        $sample_link = get_permalink(); 
         $sample_category = '';
         $categories = get_the_terms( get_the_ID(), 'samples-categories' );
         if ( $categories && ! is_wp_error( $categories ) ) {
@@ -30,6 +31,7 @@ get_header();
             [
               'sample_title' => $sample_title,
               'sample_image' => $sample_image,
+              'sample_link' => $sample_link,
               'sample_category' => $sample_category
             ]
           ); ?>

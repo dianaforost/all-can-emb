@@ -2,9 +2,20 @@
 .sample {
   border: 1px #ebe6e7 solid;
   border-radius: 6px;
-  overflow: hidden;
+  &__link {
+    border-radius: 6px;
+    transform: none;
+    overflow: hidden;
+    height: 100%;
+    &:hover,
+    &:focus {
+      transform: none;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
   &__image {
     aspect-ratio: 1;
+    border-bottom: 1px #ebe6e7 solid;
   }
   &__wrap {
     padding: 16px;
