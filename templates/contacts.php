@@ -24,7 +24,7 @@ get_header();
           <?php endif ?>
           <?php $company_phone_number = get_field('company_phone_number');
         if($company_phone_number): ?>
-        <a class="contacts__phone" href="tel:<?php echo esc_html($company_phone_number) ?>"><svg width="40px" height="40px"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-phone"></use></svg><p><?php echo esc_html($company_phone_number) ?></p></a>
+        <a class="contacts__phone" href="tel:<?php echo esc_html($company_phone_number) ?>"> <svg width="40px" height="40px"><use width="40px" height="40px" href="<?php echo get_template_directory_uri()?>/assets/images/phone.svg"></use></svg><?php echo esc_html($company_phone_number) ?></a>
         <?php endif ?>
       </div>
       </div>
