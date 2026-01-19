@@ -4,11 +4,11 @@ get_header();
 ?>
 
 <main>
+  <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
 <section class="section category">
   <div class="container">
     <div class="inner-container">
       <h2 class="category__title"><?php echo esc_html( single_term_title('', false) ); ?></h2>
-      <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
       <?php if (have_posts()) : ?>
       <ul class="category__list">
         <?php while( have_posts()) : the_post(); ?>
