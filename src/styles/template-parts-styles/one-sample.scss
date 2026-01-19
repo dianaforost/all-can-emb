@@ -1,1 +1,23 @@
-
+@use "../variables";
+.sample {
+  border: 1px #ebe6e7 solid;
+  border-radius: 6px;
+  overflow: hidden;
+  &__image {
+    aspect-ratio: 1;
+  }
+  &__wrap {
+    padding: 16px;
+  }
+  &__category {
+    font-size: 12px;
+    line-height: 1.333;
+    color: variables.$hidden-links;
+    margin-bottom: 4px;
+  }
+  &__title {
+    font-size: 18px;
+    line-height: 1.555;
+    font-weight: 600;
+  }
+}
