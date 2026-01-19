@@ -22,9 +22,9 @@
     }
   }
   &__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    justify-content: space-around;
     align-items: center;
   }
   &__address {
