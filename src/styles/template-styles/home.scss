@@ -168,7 +168,7 @@
       &:hover,
       &:focus {
         .info__text-wrap__button__icon {
-          fill: #364153;
+          fill: variables.$hover-links;
         }
       }
       &__text {
