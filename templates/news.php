@@ -14,7 +14,7 @@ get_header();
     usort($news_items, function($a, $b) {
         $dateA = DateTime::createFromFormat('F j, Y', $a['new_news_item_date']);
         $dateB = DateTime::createFromFormat('F j, Y', $b['new_news_item_date']);
-        return $dateB <=> $dateA; // newest first
+        return $dateB <=> $dateA;
     });
 }
       if ( $news_items ) : ?>
