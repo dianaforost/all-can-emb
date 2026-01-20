@@ -15,7 +15,7 @@ get_header();
       $current_term = get_queried_object();
 
       if ( $current_term && $current_term->slug === 'all' ) {
-          // Custom query: get all samples
+
           $args = [
               'post_type' => 'samples',
               'posts_per_page' => -1,
@@ -44,7 +44,6 @@ get_header();
           $sample_image = get_field('sample_image');
           $sample_link = get_permalink(); 
 
-          // Get sample category (skip "all")
           $sample_category = '';
           $categories = get_the_terms( get_the_ID(), 'samples-categories' );
           if ( $categories && ! is_wp_error( $categories ) ) {
