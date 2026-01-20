@@ -1,8 +1,9 @@
+@use "variables";
 body {
   margin: 0;
   font-style: normal;
   font-family: "Raleway", sans-serif;
-  color: #262626;
+  color: variables.$main-black-color;
 }
 
 img {
@@ -59,8 +60,8 @@ button {
   transition: all 0.5s ease;
   &:hover,
   &:focus {
-    background-color: #fff;
-    color: #262626;
+    background-color: variables.$main-white-color;
+    color: variables.$main-black-color;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;

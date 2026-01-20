@@ -19,7 +19,7 @@
   display: flex;
   gap: 4px;
   span {
-    color: #7d7e8a;
+    color: variables.$grey-color;
     &:last-child > span {
       color: variables.$main-black-color;
     }
