@@ -17,12 +17,12 @@ get_header();
          </div>
         <?php endif ?>
         <div class="contacts__container">
-        <?php $company_address= get_field('company_address');
-        $company_address_link =get_field('company_address_link');
+        <?php $company_address = get_field('company_address', 'option');
+              $company_address_link = get_field('company_address_link', 'option');
         if($company_address && $company_address_link): ?>
          <a class="contacts__address" href="<?php echo esc_html($company_address_link) ?>"> <svg width="40px" height="40px"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-map"></use></svg><?php echo wp_kses_post( wpautop( $company_address ) ); ?></a>
           <?php endif ?>
-          <?php $company_phone_number = get_field('company_phone_number');
+          <?php $company_phone_number = get_field('company_phone_number','option');
         if($company_phone_number): ?>
         <a class="contacts__phone" href="tel:<?php echo esc_html($company_phone_number) ?>"> <svg width="40px" height="40px"><use width="40px" height="40px" href="<?php echo get_template_directory_uri()?>/assets/images/phone.svg"></use></svg><?php echo esc_html($company_phone_number) ?></a>
         <?php endif ?>
