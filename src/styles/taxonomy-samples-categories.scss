@@ -1,0 +1,27 @@
+@use "variables";
+.category {
+  &__title {
+    font-size: 40px;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+.breadcrumbs__section {
+  padding-top: 120px;
+}
+.breadcrumbs {
+  display: flex;
+  gap: 4px;
+  span {
+    color: variables.$grey-color;
+    &:last-child > span {
+      color: variables.$main-black-color;
+    }
+  }
+}
