@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-<h1>Single!</h1>
+<h1></h1>
 
 </main>
 

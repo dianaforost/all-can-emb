@@ -1,0 +1,18 @@
+@use "variables";
+.section-404 {
+  padding-top: 120px;
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  &__title {
+    font-size: 200px;
+    line-height: 1.15;
+  }
+  &__text {
+    font-size: 40px;
+    line-height: 1.15;
+  }
+}

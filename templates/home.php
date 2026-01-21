@@ -30,7 +30,7 @@ get_header();
             <?php
                 if ( $button_text && $button_link ) :
             ?>
-    <a class="main-section__button"
+    <a class="button"
        href="<?php echo esc_url( $button_link['url'] ); ?>"
        target="<?php echo esc_attr( $button_link['target'] ?: '_self' ); ?>">
         <?php echo esc_html( $button_text ); ?>

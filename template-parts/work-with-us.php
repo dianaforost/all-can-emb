@@ -10,7 +10,7 @@
             <p class="work-with-us__text"><?php the_field( 'work_with_us_text' ); ?></p>
 
             <?php if ( $work_with_us_button && $work_with_us_link ) : ?>
-    <a class="work-with-us__button"
+    <a class="button"
        href="<?php echo esc_url( $work_with_us_link['url'] ); ?>"
        target="<?php echo esc_attr( $work_with_us_link['target'] ?: '_self' ); ?>">
         <?php echo esc_html( $work_with_us_button ); ?>

@@ -16,7 +16,7 @@ $what_text = get_field('what_text');
 if ( $what_title && $what_text ) :
 ?>
 <h2 class="what-we-do__wrap__title"><?php echo esc_html( $what_title ); ?></h2>
-    <p class=""> <?php echo esc_html( $what_text ); ?></p>
+    <p class="what-we-do__wrap__text"> <?php echo esc_html( $what_text ); ?></p>
 <?php endif; ?>
         </div>
 
@@ -41,6 +41,31 @@ if ( $what_title && $what_text ) :
               ?>
             <?php endforeach; ?>
           </ul>
+          <?php else :?>
+          
+
+ <?php
+$no_categories_text        = get_field('no_categories_text', 'option');
+$no_categories_button_text = get_field('no_categories_button_text', 'option');
+$no_categories_button      = get_field('no_categories_button', 'option');
+
+if ( $no_categories_text ) :
+?>
+ <div class="no-items">
+   <img class="no-items__image" src="<?php echo get_template_directory_uri()?>/assets/images/no-data.png" />
+  <p class="no-items__title"><?php echo esc_html( $no_categories_text ); ?></p>
+
+  <?php if ( $no_categories_button && $no_categories_button_text ) : ?>
+    <a class="button" href="<?php echo esc_url( $no_categories_button['url'] ); ?>" class="btn">
+      <?php echo esc_html( $no_categories_button_text ); ?>
+    </a>
+  <?php endif; ?>
+ </div>
+
+<?php endif; ?>
+
+
+            
         <?php endif; ?>
       </div>
       </div>

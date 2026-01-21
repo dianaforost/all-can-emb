@@ -70,8 +70,8 @@ if ( $categories ) :
         <div class="footer__content__wrap">
              <h3 class="footer__content__title"><?php the_field( 'footer_title_3', 'option' ); ?></h3>
              <ul class="menu-list">
-              <li class="menu-item"><a tel="<?php the_field( 'footer_phone_number', 'option' ); ?>"><?php the_field( 'footer_phone_number', 'option' ); ?></a></li>
-              <li class="menu-item"><a href="<?php the_field( 'footer_address_link', 'option' ); ?>"><?php the_field( 'footer_address', 'option' ); ?></a></li>
+              <li class="menu-item"><a tel="<?php the_field( 'company_phone_number', 'option' ); ?>"><?php the_field( 'company_phone_number', 'option' ); ?></a></li>
+              <li class="menu-item"><a href="<?php the_field( 'company_address_link', 'option' ); ?>"><?php the_field( 'company_address', 'option' ); ?></a></li>
              </ul>
         
         </div>
