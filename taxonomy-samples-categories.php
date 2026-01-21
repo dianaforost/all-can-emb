@@ -74,12 +74,12 @@ $no_samples_button      = get_field('no_samples_button', 'option');
 
 if ( $no_samples_text ) :
 ?>
- <div class="category__no-samples">
-   <img class="category__no-samples__image" src="<?php echo get_template_directory_uri()?>/assets/images/no-data.png" />
-  <p class="category__no-samples__title"><?php echo esc_html( $no_samples_text ); ?></p>
+ <div class="no-items">
+   <img class="no-items__image" src="<?php echo get_template_directory_uri()?>/assets/images/no-data.png" />
+  <p class="no-items__title"><?php echo esc_html( $no_samples_text ); ?></p>
 
   <?php if ( $no_samples_button && $no_samples_button_text ) : ?>
-    <a class="category__no-samples__link" href="<?php echo esc_url( $no_samples_button['url'] ); ?>" class="btn">
+    <a class="button" href="<?php echo esc_url( $no_samples_button['url'] ); ?>" class="btn">
       <?php echo esc_html( $no_samples_button_text ); ?>
     </a>
   <?php endif; ?>
