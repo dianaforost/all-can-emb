@@ -67,7 +67,25 @@ get_header();
           <?php endwhile; ?>
         </ul>
       <?php else : ?>
-        <p>No samples found</p>
+         <?php
+$no_samples_text        = get_field('no_samples_text', 'option');
+$no_samples_button_text = get_field('no_samples_button_text', 'option');
+$no_samples_button      = get_field('no_samples_button', 'option');
+
+if ( $no_samples_text ) :
+?>
+ <div class="category__no-samples">
+   <img class="category__no-samples__image" src="<?php echo get_template_directory_uri()?>/assets/images/no-data.png" />
+  <p class="category__no-samples__title"><?php echo esc_html( $no_samples_text ); ?></p>
+
+  <?php if ( $no_samples_button && $no_samples_button_text ) : ?>
+    <a class="category__no-samples__link" href="<?php echo esc_url( $no_samples_button['url'] ); ?>" class="btn">
+      <?php echo esc_html( $no_samples_button_text ); ?>
+    </a>
+  <?php endif; ?>
+ </div>
+
+<?php endif; ?>
       <?php endif; ?>
       <?php wp_reset_postdata(); ?>
     </div>
