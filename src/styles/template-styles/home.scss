@@ -29,20 +29,6 @@
     font-weight: 500;
     text-align: left;
   }
-  &__button {
-    padding: 18px 35px;
-    background-color: variables.$main-black-color;
-    font-size: 16px;
-    line-height: 1.25;
-    color: variables.$main-white-color;
-    border: 0.5px variables.$main-black-color solid;
-    border-radius: 5px;
-    &:hover,
-    &:focus {
-      background-color: variables.$main-white-color;
-      color: variables.$main-black-color;
-    }
-  }
   &__image {
     border-radius: 6px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;

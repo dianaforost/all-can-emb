@@ -1,21 +1,11 @@
-@use "./variables.scss" as *;
-.global {
-  color: green;
-}
-.wrapper {
-  width: 100%;
-  min-height: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
+@use "./variables";
 
 .section {
   margin-bottom: 120px;
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: variables.$desktop) {
     margin-bottom: 100px;
   }
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: variables.$tablet2) {
     margin-bottom: 60px;
   }
 }
@@ -25,7 +15,7 @@
   margin: 0 auto;
   padding: 0 16px;
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: variables.$desktop) {
     max-width: 1352px;
   }
 
@@ -33,7 +23,7 @@
     max-width: 720px;
   }
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: variables.$mobile) {
     max-width: none;
   }
 }
@@ -43,11 +33,32 @@
   margin: 0 auto;
   width: 84%;
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: variables.$desktop) {
     max-width: 1096px;
   }
 
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: variables.$tablet2) {
     width: 100%;
+  }
+}
+
+//button
+
+.button {
+  padding: 18px 35px;
+  background-color: variables.$main-black-color;
+  font-size: 20px;
+  line-height: 1.2;
+  color: variables.$main-white-color;
+  border: 0.5px variables.$main-black-color solid;
+  border-radius: variables.$border-radius;
+  &:hover,
+  &:focus {
+    background-color: variables.$main-white-color;
+    color: variables.$main-black-color;
+  }
+  @media screen and (max-width: variables.$desktop) {
+    font-size: 16px;
+    line-height: 1.25;
   }
 }

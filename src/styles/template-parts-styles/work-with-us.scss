@@ -14,18 +14,4 @@
     line-height: 24px;
     text-align: center;
   }
-  &__button {
-    border: none;
-    padding: 18px 35px;
-    background-color: #262626;
-    font-size: 16px;
-    line-height: 20px;
-    color: #fff;
-    border: 0.5px #262626 solid;
-    border-radius: 5px;
-    &:hover {
-      background-color: #fff;
-      color: #262626;
-    }
-  }
 }
