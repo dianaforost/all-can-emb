@@ -1,0 +1,32 @@
+@use "variables";
+.section-404 {
+  padding-top: 120px;
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  &__title {
+    font-size: 200px;
+    line-height: 1.15;
+  }
+  &__text {
+    font-size: 40px;
+    line-height: 1.15;
+  }
+  &__button {
+    padding: 18px 35px;
+    background-color: variables.$main-black-color;
+    font-size: 16px;
+    line-height: 1.25;
+    color: variables.$main-white-color;
+    border: 0.5px variables.$main-black-color solid;
+    border-radius: 5px;
+    &:hover,
+    &:focus {
+      background-color: variables.$main-white-color;
+      color: variables.$main-black-color;
+    }
+  }
+}
