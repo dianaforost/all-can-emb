@@ -15,18 +15,4 @@
     font-size: 40px;
     line-height: 1.15;
   }
-  &__button {
-    padding: 18px 35px;
-    background-color: variables.$main-black-color;
-    font-size: 16px;
-    line-height: 1.25;
-    color: variables.$main-white-color;
-    border: 0.5px variables.$main-black-color solid;
-    border-radius: 5px;
-    &:hover,
-    &:focus {
-      background-color: variables.$main-white-color;
-      color: variables.$main-black-color;
-    }
-  }
 }
