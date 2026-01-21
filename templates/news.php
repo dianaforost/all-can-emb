@@ -17,7 +17,7 @@ get_header();
         return $dateB <=> $dateA;
     });
 }
-      if ( !$news_items ) : ?>
+      if ( $news_items ) : ?>
     <ul class="news__list">
         <?php foreach ( $news_items as $news ) : ?>
             <?php 
