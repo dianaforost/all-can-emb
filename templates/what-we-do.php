@@ -20,7 +20,6 @@ if ( $what_title && $what_text ) :
 <?php endif; ?>
         </div>
 
-
          <div class="what-we-do__category">
         <?php
         $categories = get_terms([
@@ -43,7 +42,6 @@ if ( $what_title && $what_text ) :
           </ul>
           <?php else :?>
           
-
  <?php
 $no_categories_text        = get_field('no_categories_text', 'option');
 $no_categories_button_text = get_field('no_categories_button_text', 'option');
@@ -64,8 +62,6 @@ if ( $no_categories_text ) :
 
 <?php endif; ?>
 
-
-            
         <?php endif; ?>
       </div>
       </div>
