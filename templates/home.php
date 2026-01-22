@@ -47,7 +47,6 @@ get_header();
     </div>
 </section>
 
-
 <section class="section depart">
     <div class="container">
       <div class="inner-container depart__content">
@@ -57,8 +56,7 @@ get_header();
             </h2>
         <?php endif; ?>
 
-
-<?php
+    <?php
         $categories = get_terms([
           'taxonomy'   => 'samples-categories',
           'hide_empty' => false,
@@ -93,7 +91,6 @@ $departments_button  = get_field( 'departments_button', 'option' );
       </div>
     </div>
 </section>
-
 
 <section class="section">
   <div class="container">
@@ -179,6 +176,4 @@ if ( $info_title ) :
 
  <?php get_template_part('template-parts/work-with-us'); ?>
     </main>
-
-
 <?php get_footer(); ?>
