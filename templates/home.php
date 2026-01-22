@@ -12,8 +12,8 @@ get_header();
         $main_picture = get_field('main_picture');
         $main_title = get_field('main_title');
         $main_text = get_field('main_text');
-        $button_text = get_field( 'main_button_text' );
-        $button_link = get_field( 'main_button_link' );
+        $button_text = get_field( 'main_button_text', 'option' );
+        $button_link = get_field( 'main_button_link', 'option' );
         ?>
          <div class="main-section__list">
             <?php  if ($main_title) {?>
@@ -80,8 +80,8 @@ if ( $categories ) :
 </ul>
 <?php endif; ?>
 <?php 
-$departments_button_text = get_field('departments_button_text');
-$departments_button  = get_field( 'departments_button' );
+$departments_button_text = get_field('departments_button_text', 'option');
+$departments_button  = get_field( 'departments_button', 'option' );
 ?>
 <?php if ( $departments_button_text && $departments_button ) : ?>
     <a class="depart__content__link"

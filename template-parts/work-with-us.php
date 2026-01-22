@@ -2,8 +2,8 @@
   <div class="container">
     <div class="inner-container work-with-us__container">
        <?php if ( get_field( 'work_with_us_title' ) ) : ?>
-            <?php $work_with_us_button = get_field( 'work_with_us_button_text' );
-            $work_with_us_link = get_field( 'work_with_us_button_link' ); ?>
+            <?php $work_with_us_button = get_field( 'work_with_us_button_text', 'option' );
+            $work_with_us_link = get_field( 'work_with_us_button_link', 'option' ); ?>
             <h2 class="work-with-us__title">
                 <?php the_field( 'work_with_us_title' ); ?>
             </h2>
