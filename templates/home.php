@@ -141,8 +141,8 @@ $departments_button  = get_field( 'departments_button' );
        <?php 
 $info_title = get_field('info_title');
 $info_text = get_field('info_text');
-$info_button_text = get_field('info_button_text');
-$info_button_link  = get_field( 'info_button_link' );
+$info_button_text = get_field('info_button_text', 'option');
+$info_button_link  = get_field( 'info_button_link', 'option' );
 
 if ( $info_title ) : 
 ?>
