@@ -47,8 +47,8 @@ get_header();
   <?php else : ?>
  <div class="no-items">
    <?php $no_news=get_field('no_news');
-  $no_news_title = get_field("no_news_button_title");
-  $no_news_link = get_field("no_news_button_link"); ?>
+  $no_news_title = get_field("no_news_button_title", 'option');
+  $no_news_link = get_field("no_news_button_link", 'option'); ?>
   <img class="no-items__image" src="<?php echo get_template_directory_uri()?>/assets/images/no-data.png" />
   <p class="no-items__title"><?php echo esc_html($no_news) ?></p>
   <a class="button" href="<?php echo esc_url($no_news_link["url"]); ?>"><?php echo esc_html($no_news_title) ?></a>
