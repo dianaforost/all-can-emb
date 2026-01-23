@@ -8,7 +8,8 @@ get_header();
 <section class="section">
   <div class="container">
     <div class="inner-container single__sample">
-<?php $image=get_field('sample_image'); ?>
+<?php $image=get_field('sample_image');
+$title=get_field('sample_title'); ?>
 <img class="single__sample__image" src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt']?>"  />
 
  <div class="single__sample__container">
@@ -27,7 +28,7 @@ get_header();
           endif;
         ?>
        </div>
-        <h2 class="single__sample__wrap__content__title"><?php the_title(); ?></h2>
+<h2 class="single__sample__wrap__content__title"><?php echo esc_html($title); ?></h2>
         </div>
        <?php $sample_description = get_field('sample_description');
        $sample_description_title = get_field('sample_description_title');
