@@ -53,6 +53,20 @@ $categories = get_terms([
 if ( $categories ) :
 ?>
 <ul class="menu-list">
+    <?php
+$all_page_id = get_field('all_samples_page','option');
+if ($all_page_id) :
+
+    $all_page_link  = get_permalink($all_page_id);
+    $all_page_title = get_the_title($all_page_id);
+    ?>
+    <li class="menu-item">
+            <a href="<?php echo esc_url( $all_page_link ); ?>">
+                <?php echo esc_html( $all_page_title ); ?>
+            </a>
+        </li>
+<?php endif; ?>
+
     <?php foreach ( $categories as $category ) :  
         $link = get_category_link( $category->term_id );
     ?>

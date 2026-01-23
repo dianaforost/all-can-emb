@@ -49,6 +49,8 @@ get_header();
           echo paginate_links([
               'total' => $query->max_num_pages,
               'current' => $paged,
+               'prev_text' => '<',
+              'next_text' => '>',
           ]);
           ?>
         </div>
