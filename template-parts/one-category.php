@@ -12,7 +12,7 @@ if ( ! $category ) {
 
 $category_image = get_field(
     'category_image',
-    'samples-categories_' . $category->term_id
+    'category_' . $category->term_id
 );
 
 $category_link = get_term_link( $category );

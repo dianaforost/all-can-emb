@@ -1,5 +1,8 @@
 @use "variables";
 .category {
+  &__section {
+    padding-top: 120px;
+  }
   &__title {
     font-size: 40px;
     line-height: 1.2;
@@ -24,4 +27,8 @@
       color: variables.$main-black-color;
     }
   }
+}
+.pagination {
+  display: flex;
+  gap: 20px;
 }

@@ -46,7 +46,7 @@
            <h3 class="footer__content__title"><?php the_field( 'footer_title_2', 'option' ); ?></h3>
 <?php 
 $categories = get_terms([
-          'taxonomy'   => 'samples-categories',
+          'taxonomy'   => 'category',
           'hide_empty' => false,
         ]);
 
