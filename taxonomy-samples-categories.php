@@ -16,7 +16,7 @@ get_header();
 
 $args = [
     'post_type' => 'samples',
-    'posts_per_page' => 6,
+    'posts_per_page' => 9,
     'paged' => $paged,
 ];
 
