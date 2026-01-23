@@ -36,6 +36,10 @@
     display: grid;
     gap: 20px;
     grid-template-columns: 2fr 1fr 1fr 1fr;
+    @media screen and (max-width: variables.$tablet2) {
+      display: flex;
+      flex-direction: column;
+    }
     &__title {
       font-size: 18px;
       line-height: 1.333;
