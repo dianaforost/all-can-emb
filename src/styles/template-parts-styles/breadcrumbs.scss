@@ -5,6 +5,7 @@
 .breadcrumbs {
   display: flex;
   gap: 4px;
+  margin-bottom: 20px;
   span {
     color: variables.$grey-color;
     &:last-child > span {

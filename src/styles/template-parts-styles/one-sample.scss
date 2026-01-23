@@ -1,6 +1,6 @@
 @use "../variables";
 .sample {
-  border: 1px #ebe6e7 solid;
+  border: 1px variables.$border-color solid;
   border-radius: 6px;
   &__link {
     border-radius: 6px;
@@ -14,8 +14,9 @@
     }
   }
   &__image {
-    aspect-ratio: 1;
-    border-bottom: 1px #ebe6e7 solid;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-bottom: 1px variables.$border-color solid;
   }
   &__wrap {
     padding: 16px;
