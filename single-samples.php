@@ -14,21 +14,21 @@ $sample_title=get_field('sample_title'); ?>
 
  <div class="single__sample__container">
        <div class="single__sample__wrap__content">
-        <div class="single__sample__wrap">
-           <?php
-          $categories = get_the_terms( get_the_ID(), 'samples-categories' );
+            <div class="single__sample__wrap">
+              <?php
+              $categories = get_the_terms( get_the_ID(), 'samples-categories' );
 
-          if ( $categories && ! is_wp_error( $categories ) ) :
-              $cat_links = [];
+              if ( $categories && ! is_wp_error( $categories ) ) :
+                  $cat_links = [];
 
-              foreach ( $categories as $category ) {
-                  $cat_links[] = '<a class="single__sample__wrap__link" href="' . esc_url( get_term_link( $category ) ) . '">' . esc_html( $category->name ) . '</a>';
-              }
-              echo implode($cat_links );
-          endif;
-        ?>
-       </div>
-<h2 class="single__sample__wrap__content__title"><?php echo esc_html($sample_title); ?></h2>
+                  foreach ( $categories as $category ) {
+                      $cat_links[] = '<a class="single__sample__wrap__link" href="' . esc_url( get_term_link( $category ) ) . '">' . esc_html( $category->name ) . '</a>';
+                  }
+                  echo implode($cat_links );
+              endif;
+              ?>
+          </div>
+        <h2 class="single__sample__wrap__content__title"><?php echo esc_html($sample_title); ?></h2>
         </div>
        <?php $sample_description = get_field('sample_description');
        $sample_description_title = get_field('sample_description_title');
