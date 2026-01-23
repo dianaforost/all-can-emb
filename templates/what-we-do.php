@@ -23,7 +23,7 @@ if ( $what_title && $what_text ) :
          <div class="what-we-do__category">
         <?php
         $categories = get_terms([
-          'taxonomy'   => 'category',
+          'taxonomy'   => 'samples-categories',
           'hide_empty' => false,
         ]);
         ?>

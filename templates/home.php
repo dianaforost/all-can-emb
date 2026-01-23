@@ -58,7 +58,7 @@ get_header();
 
     <?php
         $categories = get_terms([
-          'taxonomy'   => 'category',
+          'taxonomy'   => 'samples-categories',
           'hide_empty' => false,
           'number'     => 3,
         ]);

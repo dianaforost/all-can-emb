@@ -6,31 +6,30 @@ get_header();
 <section class="section category__section">
   <div class="container">
     <div class="inner-container">
+ <h2 class="category__title"><?php echo esc_html( single_term_title('', false) ); ?></h2>
 
       <?php
-      $current_category = get_queried_object();
+      $current_term = get_queried_object();
 
-      if ( $current_category && isset( $current_category->name ) ) :
-      ?>
-        <h2 class="category__title">
-          <?php echo esc_html( $current_category->name ); ?>
-        </h2>
-      <?php endif; ?>
+     $paged = max( 1, get_query_var('paged') );
 
-      <?php
-      $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+$args = [
+    'post_type' => 'samples',
+    'posts_per_page' => 6,
+    'paged' => $paged,
+];
 
-      $args = [
-          'post_type'      => 'samples',
-          'posts_per_page' => 6,
-          'paged'          => $paged,
-      ];
+if ( $current_term && $current_term->slug !== 'all' ) {
+    $args['tax_query'] = [
+        [
+            'taxonomy' => 'samples-categories',
+            'field'    => 'slug',
+            'terms'    => $current_term->slug,
+        ],
+    ];
+}
 
-      if ( $current_category && ! empty( $current_category->slug ) && $current_category->slug !== 'all' ) {
-          $args['category_name'] = $current_category->slug;
-      }
-
-      $samples = new WP_Query( $args );
+$samples = new WP_Query($args);
       ?>
 
       <?php if ( $samples->have_posts() ) : ?>
