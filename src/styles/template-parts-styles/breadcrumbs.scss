@@ -12,4 +12,7 @@
       color: variables.$main-black-color;
     }
   }
+  @media screen and (max-width: variables.$desktop) {
+    font-size: 14px;
+  }
 }
