@@ -31,20 +31,21 @@
   gap: 20px;
   padding-top: 40px;
   font-size: 20px;
+  line-height: 1.2;
   .page-numbers {
-    color: #7d7e8a;
+    color: variables.$grey-color;
     padding: 8px 16px;
-    border: 1px #f1f1f1 solid;
+    border: 1px variables.$pagination-color solid;
     transform: none;
     &:hover,
     &:focus {
-      background-color: #f1f1f1;
-      color: #262626;
+      background-color: variables.$pagination-color;
+      color: variables.$main-black-color;
     }
     &.current {
       line-height: normal;
-      background-color: #262626;
-      color: #fff;
+      background-color: variables.$main-black-color;
+      color: variables.$main-white-color;
     }
   }
 }
