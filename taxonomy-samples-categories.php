@@ -3,7 +3,8 @@ get_header();
 ?>
 
 <main>
-<section class="section category__section">
+  <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
+<section class="section category">
   <div class="container">
     <div class="inner-container">
  <h2 class="category__title"><?php echo esc_html( single_term_title('', false) ); ?></h2>
