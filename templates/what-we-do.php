@@ -32,34 +32,32 @@ if ( $what_title && $what_text ) :
               <ul class="what-we-do__category__list">
                 
 <?php
-$page_slug = 'what-we-do/all';
+$all_page_id = get_field('all_samples_page','option'); // returns ID of the page
+if ($all_page_id) :
 
-$all_page = get_page_by_path( $page_slug );
+    $all_page_link  = get_permalink($all_page_id);
+    $all_page_title = get_the_title($all_page_id);
+    $all_page_image = get_field( 'category_image', $all_page_id ); 
+    ?>
+    <li class="what-we-do__category__list__item">
+        <a class="what-we-do__category__list__item__link__wrap" 
+           href="<?php echo esc_url( $all_page_link ); ?>">
 
-if ( $all_page ) :
-    $all_page_link  = get_permalink( $all_page->ID );
-    $all_page_title = get_the_title( $all_page->ID );
-    $all_page_image = get_field( 'category_image', $all_page->ID ); 
-?>
-<li class="what-we-do__category__list__item">
-    <a class="what-we-do__category__list__item__link__wrap" 
-       href="<?php echo esc_url( $all_page_link ); ?>">
+            <?php if ( $all_page_image && isset($all_page_image['url']) ) : ?>
+                <img class="what-we-do__category__list__item__image"
+                     src="<?php echo esc_url( $all_page_image['url'] ); ?>"
+                     alt="<?php echo esc_attr( $all_page_title ); ?>">
+                <div class="what-we-do__category__list__item__image__wrap"></div>
+            <?php else: ?>
+                <div class="what-we-do__category__list__item__image__wrap"></div>
+            <?php endif; ?>
 
-        <?php if ( $all_page_image && isset($all_page_image['url']) ) : ?>
-            <img class="what-we-do__category__list__item__image"
-                 src="<?php echo esc_url( $all_page_image['url'] ); ?>"
-                 alt="<?php echo esc_attr( $all_page_title ); ?>">
-            <div class="what-we-do__category__list__item__image__wrap"></div>
-        <?php else: ?>
-            <div class="what-we-do__category__list__item__image__wrap"></div>
-        <?php endif; ?>
+            <div class="what-we-do__category__list__item__link">
+                <p><?php echo esc_html( $all_page_title ); ?></p>
+            </div>
 
-        <div class="what-we-do__category__list__item__link">
-            <p><?php echo esc_html( $all_page_title ); ?></p>
-        </div>
-
-    </a>
-</li>
+        </a>
+    </li>
 <?php endif; ?>
 
 
