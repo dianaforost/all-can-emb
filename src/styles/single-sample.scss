@@ -72,9 +72,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    .sample:last-child {
+      display: none;
+    }
     @media screen and (max-width: variables.$tablet2) {
-      display: flex;
-      flex-direction: column;
+      .sample:last-child {
+        display: block;
+      }
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

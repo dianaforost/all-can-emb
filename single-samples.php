@@ -68,7 +68,7 @@ $sample_title=get_field('sample_title'); ?>
             if ( ! empty( $term_ids ) ) :
                 $args = [
                     'post_type'      => 'samples',
-                    'posts_per_page' => 3,
+                    'posts_per_page' => 4,
                     'post__not_in'   => [ get_the_ID() ],
                     'tax_query'      => [
                         [
