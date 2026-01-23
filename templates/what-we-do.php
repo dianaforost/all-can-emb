@@ -29,7 +29,41 @@ if ( $what_title && $what_text ) :
         ?>
 
         <?php if ( ! empty($categories) && ! is_wp_error($categories) ) : ?>
-          <ul class="what-we-do__category__list">
+              <ul class="what-we-do__category__list">
+                
+<?php
+$page_slug = 'what-we-do/all';
+
+$all_page = get_page_by_path( $page_slug );
+
+if ( $all_page ) :
+    $all_page_link  = get_permalink( $all_page->ID );
+    $all_page_title = get_the_title( $all_page->ID );
+    $all_page_image = get_field( 'category_image', $all_page->ID ); 
+?>
+<li class="what-we-do__category__list__item">
+    <a class="what-we-do__category__list__item__link__wrap" 
+       href="<?php echo esc_url( $all_page_link ); ?>">
+
+        <?php if ( $all_page_image && isset($all_page_image['url']) ) : ?>
+            <img class="what-we-do__category__list__item__image"
+                 src="<?php echo esc_url( $all_page_image['url'] ); ?>"
+                 alt="<?php echo esc_attr( $all_page_title ); ?>">
+            <div class="what-we-do__category__list__item__image__wrap"></div>
+        <?php else: ?>
+            <div class="what-we-do__category__list__item__image__wrap"></div>
+        <?php endif; ?>
+
+        <div class="what-we-do__category__list__item__link">
+            <p><?php echo esc_html( $all_page_title ); ?></p>
+        </div>
+
+    </a>
+</li>
+<?php endif; ?>
+
+
+              
             <?php foreach ( $categories as $category ) : ?>
               <?php
               get_template_part(
