@@ -57,57 +57,57 @@ $sample_title=get_field('sample_title'); ?>
       <?php endif ?>
 
      <?php
-$terms = get_the_terms( get_the_ID(), 'samples-categories' );
+        $terms = get_the_terms( get_the_ID(), 'samples-categories' );
 
-if ( $terms && ! is_wp_error( $terms ) ) :
-    $term_ids = [];
-    foreach ( $terms as $term ) {
-            $term_ids[] = $term->term_id;
-    }
+        if ( $terms && ! is_wp_error( $terms ) ) :
+            $term_ids = [];
+            foreach ( $terms as $term ) {
+                    $term_ids[] = $term->term_id;
+            }
 
-    if ( ! empty( $term_ids ) ) :
-        $args = [
-            'post_type'      => 'samples',
-            'posts_per_page' => 3,
-            'post__not_in'   => [ get_the_ID() ],
-            'tax_query'      => [
-                [
-                    'taxonomy' => 'samples-categories',
-                    'field'    => 'term_id',
-                    'terms'    => $term_ids,
-                ],
-            ],
-        ];
-
-        $related_samples = new WP_Query( $args );
-
-        if ( $related_samples->have_posts() ) :
-        ?>
-            <ul class="you-might-like__list">
-                <?php while ( $related_samples->have_posts() ) : $related_samples->the_post(); ?>
-
-                    <?php
-                    get_template_part(
-                        'template-parts/one-sample',
-                        null,
+            if ( ! empty( $term_ids ) ) :
+                $args = [
+                    'post_type'      => 'samples',
+                    'posts_per_page' => 3,
+                    'post__not_in'   => [ get_the_ID() ],
+                    'tax_query'      => [
                         [
-                            'sample_title' => get_the_title(),
-                            'sample_image' => get_field('sample_image'),
-                            'sample_link'  => get_permalink(),
-                        ]
-                    );
-                    ?>
+                            'taxonomy' => 'samples-categories',
+                            'field'    => 'term_id',
+                            'terms'    => $term_ids,
+                        ],
+                    ],
+                ];
 
-                <?php endwhile; ?>
-            </ul>
-        <?php
+                $related_samples = new WP_Query( $args );
+
+                if ( $related_samples->have_posts() ) :
+                ?>
+                    <ul class="you-might-like__list">
+                        <?php while ( $related_samples->have_posts() ) : $related_samples->the_post(); ?>
+
+                            <?php
+                            get_template_part(
+                                'template-parts/one-sample',
+                                null,
+                                [
+                                    'sample_title' => get_the_title(),
+                                    'sample_image' => get_field('sample_image'),
+                                    'sample_link'  => get_permalink(),
+                                ]
+                            );
+                            ?>
+
+                        <?php endwhile; ?>
+                    </ul>
+                <?php
+                endif;
+
+                wp_reset_postdata();
+
+            endif;
         endif;
-
-        wp_reset_postdata();
-
-    endif;
-endif;
-?>
+        ?>
     </div>
   </div>
 </section>
