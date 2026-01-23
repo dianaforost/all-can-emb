@@ -59,7 +59,6 @@ $samples = new WP_Query($args);
           <?php endwhile; ?>
         </ul>
 
-        <!-- Pagination -->
         <div class="pagination">
           <?php
           echo paginate_links( [
@@ -73,7 +72,6 @@ $samples = new WP_Query($args);
         </div>
 
       <?php else : ?>
-
         <?php
         $no_samples_text        = get_field( 'no_samples_text', 'option' );
         $no_samples_button_text = get_field( 'no_samples_button_text', 'option' );

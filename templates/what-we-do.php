@@ -32,7 +32,7 @@ if ( $what_title && $what_text ) :
               <ul class="what-we-do__category__list">
                 
 <?php
-$all_page_id = get_field('all_samples_page','option'); // returns ID of the page
+$all_page_id = get_field('all_samples_page','option');
 if ($all_page_id) :
 
     $all_page_link  = get_permalink($all_page_id);

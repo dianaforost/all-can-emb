@@ -15,7 +15,7 @@ get_header();
       $paged = max(1, get_query_var('paged'));
 
       $query = new WP_Query([
-          'post_type' => 'samples',  // your CPT
+          'post_type' => 'samples',
           'posts_per_page' => 9,
           'paged' => $paged,
       ]);
