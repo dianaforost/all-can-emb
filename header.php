@@ -24,13 +24,18 @@
           }
           ?>
             </div>
-            <?php
-wp_nav_menu([
-  'theme_location' => 'header',
-  'container'      => false,
-  'menu_class'     => 'header__content__list',
-]);
-?>
+
+           <div class="header__content__container">
+            <div class="header__content__container__burger">
+               <?php
+                wp_nav_menu([
+                  'theme_location' => 'header',
+                  'container'      => false,
+                  'menu_class'     => 'header__content__list',
+                ]);
+                ?>
+            </div>
+           </div>
 
           <div class="burger">
             <span></span>
