@@ -3,22 +3,41 @@
   .custom-logo-link {
     transform: none;
     .custom-logo {
-      width: 70px;
       border-radius: 6px;
-      max-width: none;
+      max-width: 70px;
+      @media screen and (max-width: variables.$tablet2) {
+        max-width: 50px;
+      }
     }
   }
   position: fixed;
   background-color: variables.$main-white-color;
   width: 100%;
   padding: 20px 40px;
-  max-width: 1760px;
+  max-width: 1792px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
+  @media screen and (max-width: variables.$desktop) {
+    max-width: 1352px;
+  }
+
+  @media screen and (max-width: variables.$tablet1) {
+    max-width: 720px;
+    padding: 12px 20px;
+  }
+
+  @media screen and (max-width: variables.$mobile) {
+    max-width: none;
+  }
   &__content {
     display: grid;
-    grid-template-columns: repeat(1, 3.53%) auto repeat(1, 4.83%);
+    grid-template-columns: repeat(1, 0) auto repeat(1, 0);
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: variables.$tablet2) {
+      display: flex;
+    }
     &__wrap {
       display: flex;
       align-items: center;
@@ -33,6 +52,12 @@
     &__list {
       display: flex;
       gap: 26px;
+      @media screen and (max-width: variables.$tablet2) {
+        gap: 12px;
+      }
+      @media screen and (max-width: variables.$tablet1) {
+        display: none;
+      }
       .page_item {
         &.current_page_item a {
           color: variables.$main-black-color;
@@ -61,7 +86,48 @@
         &:hover {
           color: variables.$main-black-color;
         }
+        @media screen and (max-width: variables.$tablet2) {
+          font-size: 20px;
+          line-height: 1;
+        }
       }
     }
+  }
+}
+.burger {
+  display: none;
+  @media screen and (max-width: variables.$tablet1) {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 31px;
+    justify-content: flex-start;
+    height: 21px;
+    cursor: pointer;
+  }
+  @media screen and (max-width: variables.$mobile) {
+    width: 23px;
+    height: 18px;
+  }
+  & span {
+    height: 2px;
+    width: 100%;
+    transform: scale(1);
+    background-color: variables.$main-black-color;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: variables.$main-black-color;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
   }
 }
