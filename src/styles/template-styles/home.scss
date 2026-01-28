@@ -50,9 +50,17 @@
       }
     }
     &__link {
-      font-size: 18px;
-      line-height: 1.333;
+      font-size: 22px;
+      line-height: 1.18;
       position: relative;
+      @media screen and (max-width: variables.$tablet2) {
+        font-size: 20px;
+        line-height: 1.2;
+      }
+      @media screen and (max-width: variables.$mobile) {
+        font-size: 18px;
+        line-height: 1.333;
+      }
       &::after {
         opacity: 1;
         position: absolute;
