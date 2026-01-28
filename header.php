@@ -27,6 +27,9 @@
 
            <div class="header__content__container">
             <div class="header__content__container__burger">
+              <div class="header__content__container__burger__close-button">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/cross.svg" />
+              </div>
                <?php
                 wp_nav_menu([
                   'theme_location' => 'header',

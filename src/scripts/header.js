@@ -1,6 +1,8 @@
 const menu = document.querySelector(".header__content__container");
 const openButton = document.querySelector(".burger");
-// const closeButton = document.querySelector(".header__menu__close-button");
+const closeButton = document.querySelector(
+  ".header__content__container__burger__close-button",
+);
 
 // Burger menu
 openButton.addEventListener("click", function () {
@@ -8,7 +10,7 @@ openButton.addEventListener("click", function () {
   changeMobileMenuPosition();
   document.documentElement.style.overflow = "hidden";
   menu.addEventListener("click", closeByBgdClick);
-  // closeButton.addEventListener("click", hideMenu);
+  closeButton.addEventListener("click", hideMenu);
 });
 
 function changeMobileMenuPosition() {
@@ -26,7 +28,7 @@ window.addEventListener("resize", throttle(lookForRisizeChanges, 200));
 
 function hideMenu() {
   menu.classList.remove("open");
-  // closeButton.removeEventListener("click", hideMenu);
+  closeButton.removeEventListener("click", hideMenu);
   menu.removeEventListener("click", closeByBgdClick);
   document.documentElement.style.overflow = "auto";
 }
