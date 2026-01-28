@@ -1,0 +1,88 @@
+@use "variables";
+.single {
+  &__sample {
+    display: grid;
+    gap: 48px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    @media screen and (max-width: variables.$tablet2) {
+      display: flex;
+      flex-direction: column;
+    }
+    &__image {
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        &__title {
+          font-weight: 600;
+        }
+        &__text {
+          line-height: 1.65;
+          color: variables.$hidden-links;
+        }
+      }
+      .button {
+        width: max-content;
+      }
+      @media screen and (max-width: variables.$mobile) {
+        .button {
+          width: 100%;
+        }
+      }
+    }
+    &__wrap {
+      display: flex;
+      gap: 10px;
+      color: variables.$hidden-links;
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        &__title {
+          font-size: 36px;
+          line-height: 40px;
+        }
+      }
+      &__link {
+        &:hover,
+        &:focus {
+          transform: none;
+          color: variables.$main-black-color;
+        }
+      }
+    }
+  }
+}
+.you-might-like {
+  &__title {
+    font-size: 30px;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    .sample:last-child {
+      display: none;
+    }
+    @media screen and (max-width: variables.$tablet2) {
+      .sample:last-child {
+        display: block;
+      }
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: variables.$mobile) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

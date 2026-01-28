@@ -57,7 +57,7 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-      border: 1px #ebe6e7 solid;
+      border: 1px variables.$border-color solid;
       border-radius: 6px;
       padding: 28px;
       transition: all 0.5s ease;
@@ -95,7 +95,7 @@
             &:hover,
             &:focus {
               transform: none;
-              color: #e40505;
+              color: variables.$red-color;
             }
           }
         }

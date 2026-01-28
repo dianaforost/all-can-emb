@@ -75,6 +75,9 @@ if ( ! function_exists( 'ace_enqueue_assets' ) ) {
   if (is_singular() && locate_template('template-parts/one-category.php')) {
     wp_enqueue_style('one-category-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/one-category.css', array('main'));
   }
+  if (is_singular() && locate_template('template-parts/breadcrumbs.php')) {
+    wp_enqueue_style('breadcrumbs-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/breadcrumbs.css', array('main'));
+  }
 
     }
 
