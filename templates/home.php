@@ -143,7 +143,7 @@ $info_button_link  = get_field( 'info_button_link', 'option' );
 
 if ( $info_title ) : 
 ?>
-    <h3 class="info__text-wrap__title"><?php echo esc_html( $info_title ); ?></h3>
+    <h3 class="title"><?php echo esc_html( $info_title ); ?></h3>
 <?php endif; ?>
 
 <?php if ( $info_text ) : ?>
@@ -157,7 +157,7 @@ if ( $info_title ) :
         <p class="info__text-wrap__button__text">
         <?php echo esc_html( $info_button_text ); ?>
         </p>
-        <svg class="info__text-wrap__button__icon" width="30" height="30"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow-right"></use></svg>
+        <svg class="info__text-wrap__button__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow-right"></use></svg>
     </a>
 <?php endif; ?>
       </div>
