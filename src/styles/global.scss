@@ -61,6 +61,11 @@
     font-size: 16px;
     line-height: 1.25;
   }
+  @media screen and (max-width: variables.$tablet2) {
+    font-size: 14px;
+    line-height: 1.28;
+    padding: 16px 33px;
+  }
 }
 
 //no-items
@@ -76,5 +81,14 @@
   &__title {
     font-size: 24px;
     line-height: 1.66;
+  }
+}
+//title
+.title {
+  font-size: 32px;
+  line-height: 1.25;
+  @media screen and (max-width: variables.$tablet2) {
+    font-size: 28px;
+    line-height: 1.142;
   }
 }
