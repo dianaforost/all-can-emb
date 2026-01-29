@@ -70,7 +70,7 @@
         &.current_page_item a {
           color: variables.$main-black-color;
           @media screen and (max-width: variables.$tablet1) {
-            font-weight: 500;
+            font-weight: 600;
           }
           &::after {
             opacity: 1;
@@ -89,6 +89,10 @@
         @media screen and (max-width: variables.$tablet1) {
           padding: 8px 16px 8px 8px;
         }
+        @media screen and (max-width: variables.$tablet2) {
+          font-size: 20px;
+          line-height: 1.2;
+        }
         &::after {
           opacity: 0;
           position: absolute;
@@ -102,10 +106,6 @@
         }
         &:hover {
           color: variables.$main-black-color;
-        }
-        @media screen and (max-width: variables.$tablet2) {
-          font-size: 20px;
-          line-height: 1;
         }
       }
     }
