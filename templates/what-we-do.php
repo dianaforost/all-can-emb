@@ -12,7 +12,7 @@ get_header();
        <div class="what-we-do__wrap__content">
          <?php
          $categories = get_terms([
-           'taxonomy'   => 'samples-categorie',
+           'taxonomy'   => 'samples-categories',
            'hide_empty' => false,
          ]);
          ?>
