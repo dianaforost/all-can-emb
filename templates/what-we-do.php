@@ -10,23 +10,25 @@ get_header();
       <div class="inner-container what-we-do__wrap">
        
        <div class="what-we-do__wrap__content">
+         <?php
+         $categories = get_terms([
+           'taxonomy'   => 'samples-categories',
+           'hide_empty' => false,
+         ]);
+         ?>
           <?php 
 $what_title = get_field('what_title');
 $what_text = get_field('what_text');
-if ( $what_title && $what_text ) :
+if ( $what_title ) :
 ?>
 <h2 class="what-we-do__wrap__title"><?php echo esc_html( $what_title ); ?></h2>
-    <p class="what-we-do__wrap__text"> <?php echo esc_html( $what_text ); ?></p>
 <?php endif; ?>
+<?php if (! empty($categories) && ! is_wp_error($categories) && $what_text) : ?>
+<p class="what-we-do__wrap__text"> <?php echo esc_html( $what_text ); ?></p>
+<?php endif;?>
         </div>
 
          <div class="what-we-do__category">
-        <?php
-        $categories = get_terms([
-          'taxonomy'   => 'samples-categories',
-          'hide_empty' => false,
-        ]);
-        ?>
 
         <?php if ( ! empty($categories) && ! is_wp_error($categories) ) : ?>
               <ul class="what-we-do__category__list">
