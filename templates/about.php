@@ -44,10 +44,10 @@ if ( $policy_title && $policy_text ) :
 
   <section class="section">
     <div class="container">
-      <div class="inner-container">
+      <div class="inner-container companies">
         <?php $companies_we_work_with_title= get_field('companies_we_work_with_title');
         if($companies_we_work_with_title): ?>
-        <h3 class="companies__title"><?php echo esc_html($companies_we_work_with_title); ?></h3>
+        <h3 class="title"><?php echo esc_html($companies_we_work_with_title); ?></h3>
         <?php endif ?>
 
         <?php if (have_rows('companies')):?>

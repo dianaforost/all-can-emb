@@ -32,7 +32,7 @@ get_header();
   </section>
 
   <section class="section">
-    <div cass="container">
+    <div class="container">
       <div class="inner-container">
        <h3 class="our-team__title"><?php echo esc_html(get_field('our_team_title')) ?></h3>
        <?php if ( have_rows('our_team_member') ) : ?>
