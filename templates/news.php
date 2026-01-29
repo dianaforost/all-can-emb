@@ -6,7 +6,7 @@ get_header();
 ?>
 <main>
  <section class="section news">
-  <div class="conatiner">
+  <div class="container">
     <div class="inner-container">
       <h2 class="news__title"><?php the_title(); ?></h2>
       <?php $news_items = get_field('add_new_news_item');
