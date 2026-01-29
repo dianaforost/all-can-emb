@@ -15,29 +15,46 @@
       display: flex;
       gap: 20px;
       padding: 20px 0;
+      @media screen and (max-width: variables.$tablet1) {
+        flex-direction: column;
+        align-items: center;
+      }
       &:not(:last-child) {
         border-bottom: 2px variables.$icon-background solid;
       }
       &__image {
-        width: 20%;
         max-width: 250px;
-        height: 100%;
       }
       &__wrap {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        width: 80%;
+        gap: 15px;
+        @media screen and (max-width: variables.$tablet2) {
+          gap: 10px;
+        }
         &__title {
           font-size: 24px;
+          line-height: 1.16;
+          @media screen and (max-width: variables.$tablet2) {
+            font-size: 20px;
+            line-height: 1.2;
+          }
         }
         &__date {
+          font-size: 18px;
+          line-height: 1.22;
           color: variables.$hidden-links;
+          @media screen and (max-width: variables.$tablet2) {
+            font-size: 14px;
+            line-height: 1.28;
+          }
         }
         &__text {
           display: flex;
           flex-direction: column;
           gap: 10px;
+          font-size: 16px;
+          line-height: 1.25;
         }
       }
     }
