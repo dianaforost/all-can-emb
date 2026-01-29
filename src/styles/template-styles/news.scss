@@ -6,6 +6,10 @@
     font-size: 40px;
     line-height: 1.2;
     margin-bottom: 40px;
+    @media screen and (max-width: variables.$tablet2) {
+      font-size: 36px;
+      line-height: 1.11;
+    }
   }
   &__list {
     display: flex;
