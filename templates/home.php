@@ -60,7 +60,7 @@ get_header();
         $categories = get_terms([
           'taxonomy'   => 'samples-categories',
           'hide_empty' => false,
-          'number'     => 3,
+          'number'     => 4,
         ]);
 
 if ( $categories ) :

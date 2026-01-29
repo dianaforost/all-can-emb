@@ -101,9 +101,20 @@
     gap: 40px;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
-    @media screen and (max-width: variables.$tablet2) {
-      grid-template-columns: 1fr;
+    @media screen and (max-width: variables.$tablet1) {
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
+    }
+    @media screen and (max-width: variables.$mobile) {
+      grid-template-columns: 1fr;
+    }
+    .what-we-do__category__list__item {
+      &:last-child {
+        display: none;
+        @media screen and (max-width: variables.$tablet1) {
+          display: block;
+        }
+      }
     }
   }
 }
@@ -120,8 +131,10 @@
     gap: 24px;
     justify-content: space-around;
     @media screen and (max-width: variables.$tablet2) {
-      flex-direction: column;
       gap: 20px;
+    }
+    @media screen and (max-width: variables.$mobile) {
+      flex-direction: column;
     }
     &__item {
       display: flex;
@@ -178,7 +191,7 @@
     column-gap: 20px;
     align-items: center;
     padding: 68px 0px;
-    @media screen and (max-width: variables.$tablet2) {
+    @media screen and (max-width: variables.$tablet1) {
       display: flex;
       flex-direction: column;
       gap: 24px;
@@ -188,7 +201,7 @@
     display: flex;
     flex-direction: column;
     gap: 27px;
-    @media screen and (max-width: variables.$tablet2) {
+    @media screen and (max-width: variables.$tablet1) {
       gap: 10px;
       align-items: center;
       text-align: center;
