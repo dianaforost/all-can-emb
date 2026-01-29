@@ -51,7 +51,7 @@ get_header();
     <div class="container">
       <div class="inner-container depart__content">
          <?php if ( get_field( 'depart_title' ) ) : ?>
-            <h2 class="depart__title">
+            <h2 class="title">
                 <?php the_field( 'depart_title' ); ?>
             </h2>
         <?php endif; ?>
