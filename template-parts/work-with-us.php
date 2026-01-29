@@ -4,7 +4,7 @@
        <?php if ( get_field( 'work_with_us_title' ) ) : ?>
             <?php $work_with_us_button = get_field( 'work_with_us_button_text', 'option' );
             $work_with_us_link = get_field( 'work_with_us_button_link', 'option' ); ?>
-            <h2 class="work-with-us__title">
+            <h2 class="title">
                 <?php the_field( 'work_with_us_title' ); ?>
             </h2>
             <p class="work-with-us__text"><?php the_field( 'work_with_us_text' ); ?></p>
