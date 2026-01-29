@@ -96,7 +96,7 @@ $departments_button  = get_field( 'departments_button', 'option' );
   <div class="container">
     <div class="inner-container why-us">
        <?php if ( get_field( 'why_us_section_title' ) ) : ?>
-            <h2 class="why-us__title">
+            <h2 class="title">
                 <?php the_field( 'why_us_section_title' ); ?>
             </h2>
         <?php endif; ?>

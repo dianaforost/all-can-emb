@@ -112,14 +112,17 @@
   flex-direction: column;
   gap: 40px;
   align-items: center;
-  &__title {
-    font-size: 32px;
-    line-height: 1.25;
+  @media screen and (max-width: variables.$tablet2) {
+    gap: 25px;
   }
   &__list {
     display: flex;
     gap: 24px;
     justify-content: space-around;
+    @media screen and (max-width: variables.$tablet2) {
+      flex-direction: column;
+      gap: 20px;
+    }
     &__item {
       display: flex;
       flex-direction: column;
@@ -129,10 +132,18 @@
       &__title {
         font-size: 20px;
         line-height: 1.2;
+        @media screen and (max-width: variables.$tablet2) {
+          font-size: 18px;
+          line-height: 1.22;
+        }
       }
       &__text {
         font-size: 18px;
         line-height: 1.333;
+        @media screen and (max-width: variables.$tablet2) {
+          font-size: 16px;
+          line-height: 1.25;
+        }
       }
       &__wrap {
         display: flex;
@@ -140,6 +151,9 @@
         align-items: center;
         text-align: center;
         gap: 12px;
+        @media screen and (max-width: variables.$tablet2) {
+          gap: 6px;
+        }
       }
       &__icon {
         width: 64px;
