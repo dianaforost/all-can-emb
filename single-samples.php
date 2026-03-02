@@ -9,8 +9,30 @@ get_header();
   <div class="container">
     <div class="inner-container single__sample">
 <?php $sample_image=get_field('sample_image');
-$sample_title=get_field('sample_title'); ?>
-<img class="single__sample__image" src="<?php echo $sample_image['url'] ?>" alt="<?php echo $sample_image['alt']?>"  />
+$sample_title=get_field('sample_title'); $gallery = get_field('sample_gallery'); ?>
+<div class="single__sample__content">
+
+<div class="main-image-wrapper">
+    <img 
+        class="single__sample__image active-image"
+        src="<?php echo $sample_image['url']; ?>" 
+        alt="<?php echo $sample_image['alt']; ?>"
+    />
+</div>
+
+<?php if( $gallery ): ?>
+    <div class="sample-gallery">
+        <?php foreach( $gallery as $image ): ?>
+            <img 
+                src="<?php echo $image['url']; ?>" 
+                alt="<?php echo $image['alt']; ?>" 
+                class="gallery-image"
+            />
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
+</div>
 
  <div class="single__sample__container">
        <div class="single__sample__wrap__content">
