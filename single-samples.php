@@ -51,10 +51,6 @@ $sample_title=get_field('sample_title'); ?>
 <section class="section">
   <div class="container">
     <div class="inner-container">
-      <?php $you_might_like_title= get_field('you_might_like_title', 'option'); 
-      if($you_might_like_title):?>
-      <h3 class="you-might-like__title"><?php echo esc_html($you_might_like_title); ?></h3>
-      <?php endif ?>
 
      <?php
         $terms = get_the_terms( get_the_ID(), 'samples-categories' );
@@ -83,6 +79,10 @@ $sample_title=get_field('sample_title'); ?>
 
                 if ( $related_samples->have_posts() ) :
                 ?>
+                 <?php $you_might_like_title= get_field('you_might_like_title', 'option'); 
+                if($you_might_like_title):?>
+                <h3 class="you-might-like__title"><?php echo esc_html($you_might_like_title); ?></h3>
+                <?php endif ?>
                     <ul class="you-might-like__list">
                         <?php while ( $related_samples->have_posts() ) : $related_samples->the_post(); ?>
 
