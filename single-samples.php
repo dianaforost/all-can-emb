@@ -13,21 +13,39 @@ $sample_title=get_field('sample_title'); $gallery = get_field('sample_gallery');
 <div class="single__sample__content">
 
 <div class="main-image-wrapper">
-    <img 
-        class="single__sample__image active-image"
-        src="<?php echo $sample_image['url']; ?>" 
-        alt="<?php echo $sample_image['alt']; ?>"
-    />
+   <img 
+    id="zoom-image"
+    class="single__sample__image"
+    src="<?php echo $sample_image["url"]; ?>"
+    alt="<?php echo $sample_image['alt']; ?>"
+/>
 </div>
 
 <?php if( $gallery ): ?>
-    <div class="sample-gallery">
+    <div class="sample-gallery" id="sample-gallery">
+            <a 
+                href="#"
+                data-image="<?php echo $sample_image["url"]; ?>"
+                data-zoom-image="<?php echo $sample_image['url']; ?>"
+                class="gallery-item"
+            >
+                <img
+                    src="<?php echo $sample_image['sizes']['thumbnail']; ?>"
+                    alt="<?php echo $sample_image['alt']; ?>"
+                />
+            </a>
         <?php foreach( $gallery as $image ): ?>
-            <img 
-                src="<?php echo $image['url']; ?>" 
-                alt="<?php echo $image['alt']; ?>" 
-                class="gallery-image"
-            />
+            <a 
+                href="#"
+                data-image="<?php echo $image["url"]; ?>"
+                data-zoom-image="<?php echo $image['url']; ?>"
+                class="gallery-item"
+            >
+                <img
+                    src="<?php echo $image['sizes']['thumbnail']; ?>"
+                    alt="<?php echo $image['alt']; ?>"
+                />
+            </a>
         <?php endforeach; ?>
     </div>
 <?php endif; ?>

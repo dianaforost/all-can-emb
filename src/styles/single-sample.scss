@@ -125,3 +125,10 @@
 .gallery-image:hover {
   transform: scale(1.05);
 }
+#sample-gallery a img {
+    border: 2px solid white;
+}
+
+#sample-gallery a.active img {
+    border: 2px solid #333;
+}

@@ -17,7 +17,7 @@
   max-width: 1792px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100;
+  z-index: 9999;
   @media screen and (max-width: variables.$desktop) {
     max-width: 1352px;
   }

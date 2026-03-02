@@ -144,3 +144,17 @@ if ( function_exists( 'acf_add_options_page' ) ) {
     ] );
 
 }
+function theme_enqueue_zoom() {
+    // Make sure jQuery is loaded
+    wp_enqueue_script('jquery');
+
+    // ElevateZoom Plus from CDN
+    wp_enqueue_script(
+        'elevatezoom',
+        'https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js',
+        array('jquery'),
+        null,
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_zoom');
