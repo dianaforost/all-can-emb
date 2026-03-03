@@ -39,7 +39,10 @@ if ( ! function_exists( 'ace_enqueue_assets' ) ) {
             null,
             true
         );
-
+if ( is_page_template( 'single-sample.php' ) ) {
+            wp_enqueue_style( 'ace-home-style', get_template_directory_uri() . '/assets/styles/single-sample.php', [ 'ace-main' ] );
+            wp_enqueue_script( 'ace-home-script', get_template_directory_uri() . '/assets/scripts/single-sample.php', [], null, true );
+        }
         if ( is_page_template( 'templates/home.php' ) ) {
             wp_enqueue_style( 'ace-home-style', get_template_directory_uri() . '/assets/styles/template-styles/home.css', [ 'ace-main' ] );
             wp_enqueue_script( 'ace-home-script', get_template_directory_uri() . '/assets/scripts/template-scripts/home.js', [], null, true );
@@ -141,3 +144,17 @@ if ( function_exists( 'acf_add_options_page' ) ) {
     ] );
 
 }
+function theme_enqueue_zoom() {
+    // Make sure jQuery is loaded
+    wp_enqueue_script('jquery');
+
+    // ElevateZoom Plus from CDN
+    wp_enqueue_script(
+        'elevatezoom',
+        'https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js',
+        array('jquery'),
+        null,
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_zoom');

@@ -9,8 +9,48 @@ get_header();
   <div class="container">
     <div class="inner-container single__sample">
 <?php $sample_image=get_field('sample_image');
-$sample_title=get_field('sample_title'); ?>
-<img class="single__sample__image" src="<?php echo $sample_image['url'] ?>" alt="<?php echo $sample_image['alt']?>"  />
+$sample_title=get_field('sample_title'); $gallery = get_field('sample_gallery'); ?>
+<div class="single__sample__content">
+
+<div class="main-image-wrapper">
+   <img 
+    id="zoom-image"
+    class="single__sample__image"
+    src="<?php echo $sample_image["url"]; ?>"
+    alt="<?php echo $sample_image['alt']; ?>"
+/>
+</div>
+
+<?php if( $gallery ): ?>
+    <div class="sample-gallery" id="sample-gallery">
+            <a 
+                href="#"
+                data-image="<?php echo $sample_image["url"]; ?>"
+                data-zoom-image="<?php echo $sample_image['url']; ?>"
+                class="gallery-item"
+            >
+                <img
+                    src="<?php echo $sample_image['sizes']['thumbnail']; ?>"
+                    alt="<?php echo $sample_image['alt']; ?>"
+                />
+            </a>
+        <?php foreach( $gallery as $image ): ?>
+            <a 
+                href="#"
+                data-image="<?php echo $image["url"]; ?>"
+                data-zoom-image="<?php echo $image['url']; ?>"
+                class="gallery-item"
+            >
+                <img
+                    src="<?php echo $image['sizes']['thumbnail']; ?>"
+                    alt="<?php echo $image['alt']; ?>"
+                />
+            </a>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
+</div>
 
  <div class="single__sample__container">
        <div class="single__sample__wrap__content">
@@ -51,10 +91,6 @@ $sample_title=get_field('sample_title'); ?>
 <section class="section">
   <div class="container">
     <div class="inner-container">
-      <?php $you_might_like_title= get_field('you_might_like_title', 'option'); 
-      if($you_might_like_title):?>
-      <h3 class="you-might-like__title"><?php echo esc_html($you_might_like_title); ?></h3>
-      <?php endif ?>
 
      <?php
         $terms = get_the_terms( get_the_ID(), 'samples-categories' );
@@ -83,6 +119,10 @@ $sample_title=get_field('sample_title'); ?>
 
                 if ( $related_samples->have_posts() ) :
                 ?>
+                 <?php $you_might_like_title= get_field('you_might_like_title', 'option'); 
+                if($you_might_like_title):?>
+                <h3 class="you-might-like__title"><?php echo esc_html($you_might_like_title); ?></h3>
+                <?php endif ?>
                     <ul class="you-might-like__list">
                         <?php while ( $related_samples->have_posts() ) : $related_samples->the_post(); ?>
 

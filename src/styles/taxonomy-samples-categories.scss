@@ -19,6 +19,12 @@
   padding-top: 40px;
   font-size: 20px;
   line-height: 1.2;
+  @media screen and (max-width: variables.$tablet2) {
+        gap: 10px;
+      }
+  @media screen and (max-width: variables.$mobile) {
+        gap: 5px;
+      }
   .page-numbers {
     color: variables.$grey-color;
     padding: 8px 16px;
