@@ -131,7 +131,7 @@ $sample_title=get_field('sample_title'); $gallery = get_field('sample_gallery');
                                 'template-parts/one-sample',
                                 null,
                                 [
-                                    'sample_title' => get_the_title(),
+                                    'sample_title' => get_field( 'sample_title' ),
                                     'sample_image' => get_field('sample_image'),
                                     'sample_link'  => get_permalink(),
                                 ]
